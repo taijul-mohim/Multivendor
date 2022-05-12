@@ -65,7 +65,18 @@
                     </ul>
                 </div>
                 <!-- end nav -->
+                <!-- search -->
+                 <a href="cart.php" class="btn btn-primary navbar-btn right">
+                   <i class="fa fa-shopping-cart "></i>
+                   <span>4 Items In cart</span>
+                 </a>
+                 <div class="navbar-collapse collapse-right">
+                    <button class="btn navbar-btn btn-primary" type="button" data-toggle="collapse" data-target="#search">
+                        <span class="sr-only"> Toggle search</span>
+                        <i class="fa fa-search"></i>
 
+                    </button>
+                 </div>
             </div>
 
 
