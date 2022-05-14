@@ -1,5 +1,5 @@
 body{
-    
+    font-family: 'Roboto Flex', sans-serif;;
     font-size: 14px;
     line-height: 1.4285143;
     color: #333333;
@@ -62,4 +62,58 @@ display: inline-block;
     content: "|\00a0";
     padding: 0 5px;
     color: #f7f7f7;
+}
+/* header style */
+.navbar{
+    background:white;
+
+}
+.navbar-collapse .right{
+float: right;
+}
+.navbar-brand{
+    float: left;
+    padding: 10px 15px;
+    font-size: 20px;
+    line-height: 20px;
+    height: 70px;
+}
+.navbar-brand:hover,
+.navbar-brand:focus{
+    text-decoration: none;
+}
+.nav ul.nav >li>a{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+}
+.padding-nav{
+    padding-top: 10px ;
+}
+.navbar ul.nav> li>a:hover{
+    background: #e7e7e7;
+}
+.btn-primary{
+    color: rgba(255, 255, 255, 0.897);
+    background-color: rgb(79,191,168);
+    border-color:rgb(65,179,156) ;
+}
+/* search  */
+#search .navbar-form{
+ 
+    float: right;
+}
+#search{
+    clear: both;
+    border-top: solid 1px #9a9a9a;
+    text-align: right;
+}
+#search .navbar-form .input-group{
+    display: table;
+}
+#search .navbar-from .input-group .form-control{
+ width: 100%;
+}
+#slider{
+    margin-bottom: 40px;
 }
