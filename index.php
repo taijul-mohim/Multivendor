@@ -43,15 +43,20 @@
                         <img src="images/logo.png " alt="teehosting" height="40px" class="hidden-xs thumble">
                         <img src="images/logo.png " alt="teehosting" class="visible-xs">
                     </a>
-                    <button type="button" class="navbar-toggle" data-toggle="collaps" data-target="#navigation">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
                         <span class="sr-only">Toggle Navigation</span>
                         <i class="fa fa-align-justify"></i>
 
                     </button>
-                    <button type="button" class="navbar-toggle" data-toggle="navbar-toggle" data-target="#search">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#search">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <i class="fa fa-search"></i>
+
+                    </button>
+                    <!-- <button type="button" class="navbar-toggle" data-toggle="navbar-toggle" data-target="#search">
                         <span class="sr-only"></span>
                         <i class="fa fa-search"></i>
-                    </button>
+                    </button> -->
                 </div>
                 <!-- menu -->
                 <div class="navbar-collapse collapse " id="navigation">
@@ -77,6 +82,7 @@
                         <i class="fa fa-shopping-cart "></i>
                         <span>4 Items In cart</span>
                     </a>
+
                     <div class="navbar-collapse collapse-right">
                         <button class="btn navbar-btn btn-primary" type="button" data-toggle="collapse"
                             data-target="#search">

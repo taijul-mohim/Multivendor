@@ -1,4 +1,4 @@
-
+<!-- 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,17 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 
 <!-- Optional theme -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles/style.css">
     <title>Document</title>
 </head>
-<body>
+<body> -->
 <!-- <div id="top"> -->
         <!--top bar  -->
         <!-- <div class="container">
@@ -179,8 +179,8 @@
 
 
 
-  <div id="top"> -->
-      
+  <!-- <div id="top"> -->
+<!--       
      <div class="container">
             <div class="col-md-6 offer">
                 <a href="#" class="btn btn-success btn-sm">Wellcome Guest</a>
@@ -196,9 +196,9 @@
                 </ul>
             </div>
         </div>
-    </div> 
+    </div>  --> 
 
-   <div class="header">
+   <!-- <div class="header">
        <div class="container">
        <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Navbar</a>
@@ -236,10 +236,33 @@
   </div>
 </nav>
        </div>
-   </div>
+   </div> -->
+
+   <nav class="navbar navbar-expand-md navbar-light bg-dark fixed-top">
+        <a class="navbar-brand" href=""><i class="fas fa-child text-warning fa-2x"></i></a>
+            <button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#nav"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse justify-content-between" id="nav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="">Home</a></li>
+                <li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="">Skill</a></li>
+                <li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3"href="">Project</a></li>
+                <li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="">Team</a></li>
+                <li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="">Contact</a></li>
+            </ul>
+                <!-- <form class="form-inline ml-3" action="">
+                    <div class="input-group">
+                        <input  type="text" placeholder="Search" class="form-control">
+                    </div>
+                        <div class="input-group-append">
+                            <button type="button" class="btn"><i class="fas fa-search text-muted"></i></button>
+                            </div>
+                </form> -->
+        </div>
+    </nav>
 
 
 
+    
 
 
     <!-- Optional JavaScript; choose one of the two! -->
