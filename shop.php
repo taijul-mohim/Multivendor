@@ -63,8 +63,8 @@
                     <!-- start nav -->
                     <div class="padding-nav">
                         <ul class="nav navbar-nav navbar-left">
-                            <li class="active"><a href="index.php">Home</a></li>
-                            <li><a href="shop.php">Shop</a></li>
+                            <li ><a href="index.php">Home</a></li>
+                            <li class="active"><a href="shop.php">Shop</a></li>
                             <li><a href="checkout.php">My Account</a></li>
                             <li><a href="cart.php">Shopping Cart</a></li>
                             <li><a href="about.php">About Us</a></li>
@@ -112,6 +112,41 @@
         </div>
     </div>
     <!-- nav bar end -->
+
+
+
+    <!-- content -->
+    <div id="content">
+        <div class="container">
+            <div class="col-md-12">
+                <ul class="breadcrumb">
+                    <li><a href="home.php">Home</a></li>
+                    <li>Shop</li>
+
+                </ul>
+            </div> 
+            <!--  -->
+            <div class="col-md-3">
+                <?php 
+                
+                
+                include("include/sidebar.php")
+                
+                ?>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
 
 
 
