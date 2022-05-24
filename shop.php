@@ -63,7 +63,7 @@
                     <!-- start nav -->
                     <div class="padding-nav">
                         <ul class="nav navbar-nav navbar-left">
-                            <li ><a href="index.php">Home</a></li>
+                            <li><a href="index.php">Home</a></li>
                             <li class="active"><a href="shop.php">Shop</a></li>
                             <li><a href="checkout.php">My Account</a></li>
                             <li><a href="cart.php">Shopping Cart</a></li>
@@ -116,7 +116,7 @@
 
 
     <!-- content -->
-    <div id="content">
+    <div id="new_content">
         <div class="container">
             <div class="col-md-12">
                 <ul class="breadcrumb">
@@ -124,7 +124,7 @@
                     <li>Shop</li>
 
                 </ul>
-            </div> 
+            </div>
             <!--  -->
             <div class="col-md-3">
                 <?php 
@@ -133,6 +133,145 @@
                 include("include/sidebar.php")
                 
                 ?>
+            </div>
+            <div class="col-md-9">
+                <div class="box">
+                    <h1>Shop</h1>
+                </div>
+                <div class="row">
+                    <!-- cart start -->
+                    <div class="col-md-4 col-sm-6 center-responsive">
+                        <div class="product">
+
+                            <a href="details.php">
+                                <img src="admin_area/product_images/1.jpg" class="img-responsive" alt="">
+                                <div class="text">
+                                    <h3><a href="details.php">Lorem ipsum dolor sit amet.</a></h3>
+                                    <p class="price">$15</p>
+                                    <p class="buttons">
+                                        <a href="details.php" class="btn btn-default"> View Details</a>
+                                        <a href="details.php" class="btn btn-primary"> <i
+                                                class="fa fa-shoppinf-cart"></i> Add to cart</a>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                    <!-- cart end -->
+                    <!-- cart start -->
+                    <div class="col-md-4 col-sm-6 center-responsive">
+                        <div class="product">
+
+                            <a href="details.php">
+                                <img src="admin_area/product_images/1.jpg" class="img-responsive" alt="">
+                                <div class="text">
+                                    <h3><a href="details.php">Lorem ipsum dolor sit amet.</a></h3>
+                                    <p class="price">$15</p>
+                                    <p class="buttons">
+                                        <a href="details.php" class="btn btn-default"> View Details</a>
+                                        <a href="details.php" class="btn btn-primary"> <i
+                                                class="fa fa-shoppinf-cart"></i> Add to cart</a>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                    <!-- cart end -->
+                    <!-- cart start -->
+                    <div class="col-md-4 col-sm-6 center-responsive">
+                        <div class="product">
+
+                            <a href="details.php">
+                                <img src="admin_area/product_images/1.jpg" class="img-responsive" alt="">
+                                <div class="text">
+                                    <h3><a href="details.php">Lorem ipsum dolor sit amet.</a></h3>
+                                    <p class="price">$15</p>
+                                    <p class="buttons">
+                                        <a href="details.php" class="btn btn-default"> View Details</a>
+                                        <a href="details.php" class="btn btn-primary"> <i
+                                                class="fa fa-shoppinf-cart"></i> Add to cart</a>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                    <!-- cart end -->
+                    <!-- cart start -->
+                    <div class="col-md-4 col-sm-6 center-responsive">
+                        <div class="product">
+
+                            <a href="details.php">
+                                <img src="admin_area/product_images/1.jpg" class="img-responsive" alt="">
+                                <div class="text">
+                                    <h3><a href="details.php">Lorem ipsum dolor sit amet.</a></h3>
+                                    <p class="price">$15</p>
+                                    <p class="buttons">
+                                        <a href="details.php" class="btn btn-default"> View Details</a>
+                                        <a href="details.php" class="btn btn-primary"> <i
+                                                class="fa fa-shoppinf-cart"></i> Add to cart</a>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                    <!-- cart end -->
+                    <!-- cart start -->
+                    <div class="col-md-4 col-sm-6 center-responsive">
+                        <div class="product">
+
+                            <a href="details.php">
+                                <img src="admin_area/product_images/1.jpg" class="img-responsive" alt="">
+                                <div class="text">
+                                    <h3><a href="details.php">Lorem ipsum dolor sit amet.</a></h3>
+                                    <p class="price">$15</p>
+                                    <p class="buttons">
+                                        <a href="details.php" class="btn btn-default"> View Details</a>
+                                        <a href="details.php" class="btn btn-primary"> <i
+                                                class="fa fa-shoppinf-cart"></i> Add to cart</a>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                    <!-- cart end -->
+                    <!-- cart start -->
+                    <div class="col-md-4 col-sm-6 center-responsive">
+                        <div class="product">
+
+                            <a href="details.php">
+                                <img src="admin_area/product_images/1.jpg" class="img-responsive" alt="">
+                                <div class="text">
+                                    <h3><a href="details.php">Lorem ipsum dolor sit amet.</a></h3>
+                                    <p class="price">$15</p>
+                                    <p class="buttons">
+                                        <a href="details.php" class="btn btn-default"> View Details</a>
+                                        <a href="details.php" class="btn btn-primary"> <i
+                                                class="fa fa-shoppinf-cart"></i> Add to cart</a>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                    <!-- cart end -->
+                    <!-- pagination -->
+                    <center>
+                        <ul class="pagination">
+                            <li><a href="shop.php">Feist page</a></li>
+                            <li><a href="shop.php">2</a></li>
+                            <li><a href="shop.php">3</a></li>
+                            <li><a href="shop.php">4</a></li>
+                            <li><a href="shop.php">5</a></li>
+                            <li><a href="shop.php">Last page</a></li>
+                        </ul>
+                    </center>
+                    <!-- end pagination -->
+                </div>
             </div>
         </div>
 
@@ -155,12 +294,16 @@
 
 
     <?php  include("include/footer.php");  ?>
-    
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous">
+    </script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
@@ -168,5 +311,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
     -->
-  </body>
+</body>
+
 </html>
