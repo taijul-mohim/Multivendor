@@ -137,46 +137,131 @@
             <!-- product menu -->
             <div class="col-md-9">
                 <div class="row" id="productmain">
-                <div class="col-sm-6">
-                    <div id="mainimage">
-                        <div id="mycarousel" class="carousel slide" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                                <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
-                                <li data-target="#mycarousel" data-slide-to="1"></li>
-                                <li data-target="#mycarousel" data-slide-to="2"></li>
-                            </ol>
-                        </div>
-                    <div class="carousel-inner">
-                        <div class="item active">
-                             <center>
-                                 <img src="admin_area/product_images/burger.jpg" class="img-responsive" alt="">
-                             </center>
-                        </div>
-                        <div class="item">
-                             <center>
-                                 <img src="admin_area/product_images/momo.jpg" class="img-responsive" alt="">
-                             </center>
-                        </div> 
-                        <div class="item">
-                             <center>
-                                 <img src="admin_area/product_images/pizza.jpg" class="img-responsive" alt="">
-                             </center>
-                        </div>
+                    <div class="col-sm-6">
+                        <div id="mainimage">
+                            <div id="mycarousel" class="carousel slide" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+                                    <li data-target="#mycarousel" data-slide-to="1"></li>
+                                    <li data-target="#mycarousel" data-slide-to="2"></li>
+                                </ol>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <center>
+                                        <img src="admin_area/product_images/burger.jpg" class="img-responsive" alt="">
+                                    </center>
+                                </div>
+                                <div class="item">
+                                    <center>
+                                        <img src="admin_area/product_images/momo.jpg" class="img-responsive" alt="">
+                                    </center>
+                                </div>
+                                <div class="item">
+                                    <center>
+                                        <img src="admin_area/product_images/pizza.jpg" class="img-responsive" alt="">
+                                    </center>
+                                </div>
 
-                    </div>
-             <a href="#mycarousel" class="left carousel-control" data-slide="prev">
-                 <span class="glyphicon glyphicon-chevron-left"></span>
-                 <span class="sr-only">Previous</span>
-             </a>
-             <a href="#mycarousel" class="right carousel-control" data-slide="next">
-                 <span class="glyphicon glyphicon-chevron-right"></span>
-                 <span class="sr-only">Next</span>
-             </a>
+                            </div>
+                            <a href="#mycarousel" class="left carousel-control" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a href="#mycarousel" class="right carousel-control" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
 
 
+                        </div>
                     </div>
+                    <!-- end cal sm 6 -->
+                    <div class="col-sm-6">
+                        <div class="box">
+                            <h1 class="text-center">Pizza With hot Souces</h1>
+                            <form action="details.php" method="post" class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-md-5 control-label">Product Quantity</label>
+                                    <div class="col-md-7">
+                                        <select name="product_qty" class="form-control">
+                                            <option value="">1</option>
+                                            <option value="">2</option>
+                                            <option value="">3</option>
+                                            <option value="">4</option>
+                                            <option value="">5</option>
+
+
+
+
+                                        </select>
+                                    </div>
+                                    <br>
+                                    <br>
+
+                                    <!-- Product size -->
+                                    <div class="form-group">
+                                        <label class="col-md-5 control-label">Product Size</label>
+                                        <div class="col-md-7">
+                                            <select name="product_qty" class="form-control">
+                                                <option value="">Select a size</option>
+                                                <option value="">Small</option>
+                                                <option value="">Medium</option>
+                                                <option value="">Large</option>
+                                                <option value="">Extra large</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- price -->
+                                <p class="price">120tk</p>
+                                <p class="text-center buttons">
+                                    <button class="btn btn-primary" type="submit">
+                                        <i class="fa fa-shopping-cart"></i>Add To cart
+                                    </button>
+                                </p>
+                            </form>
+                        </div>
+                        <div class="col-xs-4">
+                            <a href="#" class="thumb">
+                                <img src="admin_area/product_images/1.jpg" height="100" alt="">
+                            </a>
+                        </div>
+                        <div class="col-xs-4">
+                            <a href="#" class="thumb">
+                                <img src="admin_area/product_images/1.jpg" height="100" alt="">
+                            </a>
+                        </div>
+                        <div class="col-xs-4">
+                            <a href="#" class="thumb">
+                                <img src="admin_area/product_images/1.jpg" height="100" alt="">
+                            </a>
+                        </div>
                     </div>
+
+
                 </div>
+                <!-- start -->
+                <div class="box" id="details">
+                    <h4>Product Details</h4>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque consequatur, quae consequuntur a
+                        provident labore iusto inventore fuga illo itaque, ducimus magni culpa voluptates eveniet amet
+                        cum, ipsum doloremque. Voluptates debitis eum, iste officia officiis amet dolorum autem velit
+                        eaque fugit animi, ipsa provident exercitationem sapiente distinctio assumenda labore beatae
+                        natus? Corporis aut voluptatibus eius autem ut eligendi ducimus pariatur veniam error nam, illo
+                        enim dolorum necessitatibus. Optio beatae illum mollitia pariatur enim, consequatur minima
+                        deserunt expedita totam nihil provident harum quos quae explicabo est doloremque perferendis,
+                        impedit dolorum. Quasi magnam laboriosam quae, expedita iste possimus cum ea omnis et.</p>
+                    <h4>Size</h4>
+                    <ul>
+                        <li> small</li>
+                        <li>Medium</li>
+                        <li> Large</li>
+                        <li> small</li>
+                    </ul>
+                </div>
+                <!-- start -->
             </div>
 
 
