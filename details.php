@@ -261,6 +261,61 @@
                         <li> small</li>
                     </ul>
                 </div>
+                <!-- uggestion bar -->
+               <div id="row same-height-row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="box same-height headline ">
+                            <h3 class="text-center"> You also like those Food</h3>
+
+                        </div>
+
+                    </div>
+                <!-- food -->
+                   <div class="center-responsive col-md-3">
+                        <div class="product same-height">
+                            <a href="">
+                        <img src="admin_area/product_images/1.jpg" hight='220' width="220" alt="">
+
+                                
+                            </a>
+                            <div class="text">
+                                <h3><a href="details.php">Mardaz food</a></h3>
+                                <p class="price">250tk</p>
+                            </div>
+                        </div>
+                   </div>
+                   <div class="center-responsive col-md-3">
+                        <div class="product same-height">
+                            <a href="">
+                        <img src="admin_area/product_images/1.jpg" width="220" alt="">
+
+                                
+                            </a>
+                            <div class="text">
+                                <h3><a href="details.php">Mardaz food</a></h3>
+                                <p class="price">250tk</p>
+                            </div>
+                        </div>
+                   </div>
+                   <div class="center-responsive col-md-3">
+                        <div class="product same-height">
+                            <a href="">
+                        <img src="admin_area/product_images/1.jpg"width="220" alt="">
+
+                                
+                            </a>
+                            <div class="text">
+                                <h3><a href="details.php">Mardaz food</a></h3>
+                                <p class="price">250tk</p>
+                            </div>
+                        </div>
+                   </div>
+
+              </div>
+
+
+
+
                 <!-- start -->
             </div>
 
