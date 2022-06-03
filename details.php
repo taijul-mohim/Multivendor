@@ -271,7 +271,23 @@
 
                     </div>
                 <!-- food -->
-                   <div class="center-responsive col-md-3">
+
+                <div class="col-md-3 col-sm-6 center-responsive">
+                        <div class="product">
+
+                            <a href="details.php">
+                                <img src="admin_area/product_images/1.jpg" class="img-responsive" alt="">
+                                <div class="text">
+                                    <h3 class="text-center"><a href="details.php">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat, ut?</a></h3>
+                                    <p class="price text-center ">$15</p>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+
+
+                   <!-- <div class="center-responsive col-md-3">
                         <div class="product same-height">
                             <a href="">
                         <img src="admin_area/product_images/1.jpg" hight='220' width="220" alt="">
@@ -283,8 +299,8 @@
                                 <p class="price">250tk</p>
                             </div>
                         </div>
-                   </div>
-                   <div class="center-responsive col-md-3">
+                   </div> -->
+                   <!-- <div class="center-responsive col-md-3">
                         <div class="product same-height">
                             <a href="">
                         <img src="admin_area/product_images/1.jpg" width="220" alt="">
@@ -296,8 +312,8 @@
                                 <p class="price">250tk</p>
                             </div>
                         </div>
-                   </div>
-                   <div class="center-responsive col-md-3">
+                   </div> -->
+                   <!-- <div class="center-responsive col-md-3">
                         <div class="product same-height">
                             <a href="">
                         <img src="admin_area/product_images/1.jpg"width="220" alt="">
@@ -309,8 +325,33 @@
                                 <p class="price">250tk</p>
                             </div>
                         </div>
-                   </div>
+                   </div> -->
+                   <div class="col-md-3 col-sm-6 center-responsive">
+                        <div class="product">
 
+                            <a href="details.php">
+                                <img src="admin_area/product_images/1.jpg" class="img-responsive" alt="">
+                                <div class="text">
+                                    <h3 class="text-center"><a href="details.php">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat, ut?</a></h3>
+                                    <p class="price text-center ">$15</p>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                     <div class="col-md-3 col-sm-6 center-responsive">
+                        <div class="product">
+
+                            <a href="details.php">
+                                <img src="admin_area/product_images/1.jpg" class="img-responsive" alt="">
+                                <div class="text">
+                                    <h3 class="text-center"><a href="details.php">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat, ut?</a></h3>
+                                    <p class="price text-center ">$15</p>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
               </div>
 
 
@@ -323,8 +364,6 @@
 
         </div>
     </div>
-
-
 
 
 
