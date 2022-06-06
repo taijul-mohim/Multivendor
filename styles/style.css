@@ -235,8 +235,11 @@ font-weight: 300;
     }
 }
 
+/* cart style */
+#new_content #cart .table tbody tr td img{
+    width: 50px;
 
-
+}
 
 
 
