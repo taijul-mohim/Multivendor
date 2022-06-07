@@ -65,7 +65,7 @@
                         <ul class="nav navbar-nav navbar-left">
                             <li><a href="index.php">Home</a></li>
                             <li class="active"><a href="shop.php">Shop</a></li>
-                            <li><a href="checkout.php">My Account</a></li>
+                            <li><a href="customer/my_account.php">My Account</a></li>
                             <li><a href="cart.php">Shopping Cart</a></li>
                             <li><a href="about.php">About Us</a></li>
                             <li><a href="services.php">Services</a></li>
@@ -111,10 +111,9 @@
             </div>
         </div>
     </div>
+
+    
     <!-- nav bar end -->
-
-
-
     <div id="new_content">
         <div class="container">
             <div class="col-md-12">
@@ -283,11 +282,36 @@
             <div class="col-md-3">
                 <div class="box" id="order-summary">
                  <h3>Order Summary</h3>
-                   
-                </div>
-                <p class="text-mudted">
-                  Shopping and additionnal costs are calculated based
+                 <p class="text-muted">
+                  Shopping and additionnal costs are calculated based on the values you have entered
                 </p>
+                 <div class="table-responsive">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>Order Subtotal</td>
+                                <th>150Tk</th>
+                            </tr>
+                            <tr>
+                                <td>Shipping and handling</td>
+                                <td>150 tk</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    taxt
+                                </td>
+                                <td>150tk</td>
+                            </tr>
+                            <tr class="total">
+                                <td>Total</td>
+                                <th>150tk</th>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+                </div>
+                
             </div>
             
         </div>
