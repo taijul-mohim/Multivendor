@@ -1,3 +1,13 @@
+<?php 
+
+include("include/db.php");
+
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -150,36 +160,58 @@
                    <span class="sr-only">Next</span>
                </a>
             </div> -->
-      
-<div class="w3-content w3-display-container">
-  <img class="mySlides" src="admin_area/slider_images/1.jpg" height="500px" style="width:100%">
-  <img class="mySlides" src="admin_area/slider_images/2.jpg"  height="500px"  style="width:100%">
-  <img class="mySlides" src="admin_area/slider_images/3.jpg"  height="500px"  style="width:100%">
-  <div class="container" align="center">
-  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
-  </div>
-</div>
 
-<script>
-var slideIndex = 1;
-showDivs(slideIndex);
+            <div class="w3-content w3-display-container">
+                <?php
+            $get_slider="SELECT * FROM slider";
+            $run_slider=mysqli_query($con,$get_slider);
+            while($row=mysqli_fetch_array($run_slider)){
+                $id=$row["id"];
+                $slider_name=$row['slider_name'];
+                $slider_image=$row['slider_image'];
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
 
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  x[slideIndex-1].style.display = "block";  
-}
-</script>
+
+         
+
+?>
+
+
+                <img class="mySlides" src="admin_area/slider_images/<?php echo $slider_image?>" height="500px"
+                    style="width:100%">
+
+                <?php }?>
+
+
+                <div  align="center">
+                    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+                </div>
+            </div>
+
+            <script>
+                var slideIndex = 1;
+                showDivs(slideIndex);
+
+                function plusDivs(n) {
+                    showDivs(slideIndex += n);
+                }
+
+                function showDivs(n) {
+                    var i;
+                    var x = document.getElementsByClassName("mySlides");
+                    if (n > x.length) {
+                        slideIndex = 1
+                    }
+                    if (n < 1) {
+                        slideIndex = x.length
+                    }
+                    for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";
+                    }
+                    x[slideIndex - 1].style.display = "block";
+                }
+            </script>
 
 
 
@@ -193,7 +225,7 @@ function showDivs(n) {
                 <div class="col-sm-4">
                     <div class="box same-height">
                         <div class="icon">
-                            <i class="fa fa-heart"></i>
+                           
                             <h3><a href="">Best PRICE</a></h3>
                             <p>You can check on all others sits about the pricces and than compire with o</p>
                         </div>
@@ -203,7 +235,7 @@ function showDivs(n) {
                 <div class="col-sm-4">
                     <div class="box same-height">
                         <div class="icon">
-                            <i class="fa fa-heart"></i>
+                          
                             <h3><a href="">1005 SATISFACTION GUARANTEED FROM US</a></h3>
                             <p>Free returns on everythings for 3 months</p>
                         </div>
@@ -214,7 +246,7 @@ function showDivs(n) {
                 <div class="col-sm-4">
                     <div class="box same-height">
                         <div class="icon">
-                            <i class="fa fa-heart"></i>
+        
                             <h3><a href="">WE LOVE OUR CUSTOMER</a></h3>
                             <p>We are known to best possible services</p>
                         </div>
@@ -230,93 +262,170 @@ function showDivs(n) {
         <div class="box">
             <div class="container">
                 <div class="col-md-12">
-                   <h2>Letest This week</h2>
+                    <h2>Letest This week</h2>
                 </div>
             </div>
         </div>
     </div>
-<!-- content -->
-   <div id="content" class="container">
-       <div class="row">
-           <div class="col-md-4 col-sm-6 text-center  single"><!-- start -->
-               <div class="product">
-                   <a href="details.php">
-                       <img src="admin_area/product_images/1.jpg"  class="img-responsive" alt="">
-                   </a>
-                   <div class="text">
-                       <h3> <a href="details.php">Good dises</a></h3>
-                       <p class="Price"> $15</p>
-                       <div class="buttons">
-                           <a href="details.php" class="btn btn-default">View Details</a>
-                           <a href="details.php" class="btn btn-primary">
-                               <i class="fa fa-shopping"></i> Add to cart
-                           </a>
-                       </div>
-                   </div>
-               </div>
+    <!-- content -->
+    <div id="content" class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-6 center-responsive single">
+                <div class="product">
 
-           </div><!-- end -->
-           <div class="col-md-4 col-sm-6  text-center single"><!-- start -->
-               <div class="product">
-                   <a href="details.php">
-                       <img src="admin_area/product_images/1.jpg"  class="img-responsive" alt="">
-                   </a>
-                   <div class="text">
-                       <h3> <a href="details.php">Good dises</a></h3>
-                       <p class="Price"> $15</p>
-                       <div class="buttons">
-                           <a href="details.php" class="btn btn-default">View Details</a>
-                           <a href="details.php" class="btn btn-primary">
-                               <i class="fa fa-shopping"></i> Add to cart
-                           </a>
-                       </div>
-                   </div>
-               </div>
+                    <a href="details.php">
+                        <img src="admin_area/product_images/1.jpg" class="img-responsive" alt="">
+                        <div class="text">
+                            <h3><a href="details.php">Lorem ipsum dolor sit amet.</a></h3>
+                            <p class="price">$15</p>
+                            <p class="buttons">
+                                <a href="details.php" class="btn btn-default"> View Details</a>
+                                <a href="details.php" class="btn btn-primary"> <i class="fa fa-shoppinf-cart"></i> Add
+                                    to cart</a>
+                            </p>
+                        </div>
+                    </a>
+                </div>
 
-           </div><!-- end -->
-           <div class="col-md-4 col-sm-6 text-center single"><!-- start -->
-               <div class="product">
-                   <a href="details.php">
-                       <img src="admin_area/product_images/1.jpg"  class="img-responsive" alt="">
-                   </a>
-                   <div class="text">
-                       <h3> <a href="details.php">Good dises</a></h3>
-                       <p class="Price"> $15</p>
-                       <div class="buttons">
-                           <a href="details.php" class="btn btn-default">View Details</a>
-                           <a href="details.php" class="btn btn-primary">
-                               <i class="fa fa-shopping"></i> Add to cart
-                           </a>
-                       </div>
-                   </div>
-               </div>
+            </div>
+            <!-- end -->
+            <div class="col-md-4 col-sm-6 center-responsive single">
+                <div class="product">
 
-           </div><!-- end -->
-           <div class="col-md-4 col-sm-6 text-center single"><!-- start -->
-               <div class="product">
-                   <a href="details.php">
-                       <img src="admin_area/product_images/1.jpg"  class="img-responsive" alt="">
-                   </a>
-                   <div class="text">
-                       <h3> <a href="details.php">Good dises</a></h3>
-                       <p class="Price"> $15</p>
-                       <div class="buttons">
-                           <a href="details.php" class="btn btn-default">View Details</a>
-                           <a href="details.php" class="btn btn-primary">
-                               <i class="fa fa-shopping"></i> Add to cart
-                           </a>
-                       </div>
-                   </div>
-               </div>
+                    <a href="details.php">
+                        <img src="admin_area/product_images/1.jpg" class="img-responsive" alt="">
+                        <div class="text">
+                            <h3><a href="details.php">Lorem ipsum dolor sit amet.</a></h3>
+                            <p class="price">$15</p>
+                            <p class="buttons">
+                                <a href="details.php" class="btn btn-default"> View Details</a>
+                                <a href="details.php" class="btn btn-primary"> <i class="fa fa-shoppinf-cart"></i> Add
+                                    to cart</a>
+                            </p>
+                        </div>
+                    </a>
+                </div>
 
-           </div><!-- end -->
-       </div>
+            </div><!-- end -->
+            <div class="col-md-4 col-sm-6 center-responsive single">
+                <div class="product">
 
-   </div>
+                    <a href="details.php">
+                        <img src="admin_area/product_images/1.jpg" class="img-responsive" alt="">
+                        <div class="text">
+                            <h3><a href="details.php">Lorem ipsum dolor sit amet.</a></h3>
+                            <p class="price">$15</p>
+                            <p class="buttons">
+                                <a href="details.php" class="btn btn-default"> View Details</a>
+                                <a href="details.php" class="btn btn-primary"> <i class="fa fa-shoppinf-cart"></i> Add
+                                    to cart</a>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+
+            </div><!-- end -->
+            <div class="col-md-4 col-sm-6 center-responsive single">
+                <div class="product">
+
+                    <a href="details.php">
+                        <img src="admin_area/product_images/1.jpg" class="img-responsive" alt="">
+                        <div class="text">
+                            <h3><a href="details.php">Lorem ipsum dolor sit amet.</a></h3>
+                            <p class="price">$15</p>
+                            <p class="buttons">
+                                <a href="details.php" class="btn btn-default"> View Details</a>
+                                <a href="details.php" class="btn btn-primary"> <i class="fa fa-shoppinf-cart"></i> Add
+                                    to cart</a>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+
+            </div><!-- end -->
+            <div class="col-md-4 col-sm-6 center-responsive single">
+                <div class="product">
+
+                    <a href="details.php">
+                        <img src="admin_area/product_images/1.jpg" class="img-responsive" alt="">
+                        <div class="text">
+                            <h3><a href="details.php">Lorem ipsum dolor sit amet.</a></h3>
+                            <p class="price">$15</p>
+                            <p class="buttons">
+                                <a href="details.php" class="btn btn-default"> View Details</a>
+                                <a href="details.php" class="btn btn-primary"> <i class="fa fa-shoppinf-cart"></i> Add
+                                    to cart</a>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+            <!-- end -->
+            <div class="col-md-4 col-sm-6 center-responsive single">
+                <div class="product">
+
+                    <a href="details.php">
+                        <img src="admin_area/product_images/1.jpg" class="img-responsive" alt="">
+                        <div class="text">
+                            <h3><a href="details.php">Lorem ipsum dolor sit amet.</a></h3>
+                            <p class="price">$15</p>
+                            <p class="buttons">
+                                <a href="details.php" class="btn btn-default"> View Details</a>
+                                <a href="details.php" class="btn btn-primary"> <i class="fa fa-shoppinf-cart"></i> Add
+                                    to cart</a>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+            <!-- end -->
+            <div class="col-md-4 col-sm-6 center-responsive single">
+                        <div class="product">
+
+                            <a href="details.php">
+                                <img src="admin_area/product_images/1.jpg" class="img-responsive" alt="">
+                                <div class="text">
+                                    <h3><a href="details.php">Lorem ipsum dolor sit amet.</a></h3>
+                                    <p class="price">$15</p>
+                                    <p class="buttons">
+                                        <a href="details.php" class="btn btn-default"> View Details</a>
+                                        <a href="details.php" class="btn btn-primary"> <i
+                                                class="fa fa-shoppinf-cart"></i> Add to cart</a>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                    <!-- end -->
+                    <div class="col-md-4 col-sm-6 center-responsive single">
+                        <div class="product">
+
+                            <a href="details.php">
+                                <img src="admin_area/product_images/1.jpg" class="img-responsive" alt="">
+                                <div class="text">
+                                    <h3><a href="details.php">Lorem ipsum dolor sit amet.</a></h3>
+                                    <p class="price">$15</p>
+                                    <p class="buttons">
+                                        <a href="details.php" class="btn btn-default"> View Details</a>
+                                        <a href="details.php" class="btn btn-primary"> <i
+                                                class="fa fa-shoppinf-cart"></i> Add to cart</a>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                    <!--  -->
+        </div>
+
+    </div>
 
 
 
-<?php  include("include/footer.php");  ?>
+    <?php  include("include/footer.php");  ?>
 
 
 

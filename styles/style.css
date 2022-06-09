@@ -152,7 +152,13 @@ font-weight: 100;
 }
 .single{
     width: 290px;
+    align-items: center;
 }
+@media only screen and (max-width: 600px) {
+    h1 {
+      font-size: 25px;
+    }
+  }
 @media(max-width:768){
     .single{
         width: 60%;
