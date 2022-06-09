@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -139,15 +138,12 @@
              <div class="col-md-9">
                <?php if(isset($_GET['my_order'])){
                    include("my_order.php");
+               }?>
+               <!-- pay offline -->
 
-               }
-               
-              
-               
-               
-               ?>
-
-
+               <?php if(isset($_GET['pay_offline'])){
+                   include("pay_offline.php");
+               }?>
 
 
              </div>

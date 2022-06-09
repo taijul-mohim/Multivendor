@@ -142,6 +142,31 @@
                             <label for="">Invoice Number</label>
                             <input type="text" name="invoice_number" class="form-control" required=''>
                         </div>
+                        <div class="form-group">
+                            <label for="">Amount</label>
+                            <input type="text" name="amount" class="form-control" required=''>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Payment Method</label>
+                            <select name="payment_method" id="" class="form-control">
+                                <option value="">Bank Transfer</option>
+                                <option value=""> Bekash</option>
+                                <option value="">Nogod</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Trasnsection Number</label>
+                            <input type="text" name="Trfr_number" class="form-control" required=''>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Payment Date</label>
+                            <input type="Date" name="date" class="form-control" required=''>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" name="Confrim_payment" class="btn btn-primary">
+                             Confirm Payment
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>

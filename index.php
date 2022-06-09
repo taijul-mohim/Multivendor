@@ -150,39 +150,38 @@
                    <span class="sr-only">Next</span>
                </a>
             </div> -->
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                </ol>
+      
+<div class="w3-content w3-display-container">
+  <img class="mySlides" src="admin_area/slider_images/1.jpg" height="500px" style="width:100%">
+  <img class="mySlides" src="admin_area/slider_images/2.jpg"  height="500px"  style="width:100%">
+  <img class="mySlides" src="admin_area/slider_images/3.jpg"  height="500px"  style="width:100%">
+  <div class="container" align="center">
+  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+  </div>
+</div>
 
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <img src="cover/1.jpg" alt="Los Angeles">
-                    </div>
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
 
-                    <div class="item">
-                        <img src="cover/1_nKSANcE0nTsmnFY3w4O1dQ.png" alt="Chicago">
-                    </div>
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
 
-                    <div class="item">
-                        <img src="cover/3.jpg" alt="New York">
-                    </div>
-                </div>
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
 
-                <!-- Left and right controls -->
-                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
+
 
         </div>
 
@@ -239,7 +238,7 @@
 <!-- content -->
    <div id="content" class="container">
        <div class="row">
-           <div class="col-sm-4 col-sm-6 single"><!-- start -->
+           <div class="col-md-4 col-sm-6 text-center  single"><!-- start -->
                <div class="product">
                    <a href="details.php">
                        <img src="admin_area/product_images/1.jpg"  class="img-responsive" alt="">
@@ -257,7 +256,7 @@
                </div>
 
            </div><!-- end -->
-           <div class="col-sm-4 col-sm-6 single"><!-- start -->
+           <div class="col-md-4 col-sm-6  text-center single"><!-- start -->
                <div class="product">
                    <a href="details.php">
                        <img src="admin_area/product_images/1.jpg"  class="img-responsive" alt="">
@@ -275,7 +274,7 @@
                </div>
 
            </div><!-- end -->
-           <div class="col-sm-4 col-sm-6 single"><!-- start -->
+           <div class="col-md-4 col-sm-6 text-center single"><!-- start -->
                <div class="product">
                    <a href="details.php">
                        <img src="admin_area/product_images/1.jpg"  class="img-responsive" alt="">
@@ -293,7 +292,7 @@
                </div>
 
            </div><!-- end -->
-           <div class="col-sm-4 col-sm-6 single"><!-- start -->
+           <div class="col-md-4 col-sm-6 text-center single"><!-- start -->
                <div class="product">
                    <a href="details.php">
                        <img src="admin_area/product_images/1.jpg"  class="img-responsive" alt="">

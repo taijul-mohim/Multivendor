@@ -139,7 +139,7 @@
                 <div class="row" id="productmain">
                     <div class="col-sm-6">
                         <div id="mainimage">
-                            <div id="mycarousel" class="carousel slide" data-ride="carousel">
+                            <!-- <div id="mycarousel" class="carousel slide" data-ride="carousel">
                                 <ol class="carousel-indicators">
                                     <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
                                     <li data-target="#mycarousel" data-slide-to="1"></li>
@@ -171,7 +171,39 @@
                             <a href="#mycarousel" class="right carousel-control" data-slide="next">
                                 <span class="glyphicon glyphicon-chevron-right"></span>
                                 <span class="sr-only">Next</span>
-                            </a>
+                            </a> -->
+
+
+                                
+<div class="w3-content w3-display-container">
+  <img class="mySlides" src="admin_area/product_images/1.jpg" height="500px" style="width:100%">
+  <img class="mySlides" src="admin_area/product_images/burger.jpg"  height="500px"  style="width:100%">
+  <img class="mySlides" src="admin_area/product_images/pizza.jpg"  height="500px"  style="width:100%">
+  <div  align="center">
+  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+  </div>
+</div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
 
 
                         </div>
