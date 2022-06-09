@@ -145,7 +145,15 @@
                    include("pay_offline.php");
                }?>
 
-
+               <?php if(isset($_GET['edit_account'])){
+                   include("edit_account.php");
+               }?>
+               <?php if(isset($_GET['change_pass'])){
+                   include("change_pass.php");
+               }?>
+                <?php if(isset($_GET['delete_account'])){
+                   include("delete_account.php");
+               }?>
              </div>
 
 

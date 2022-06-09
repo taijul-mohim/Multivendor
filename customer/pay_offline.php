@@ -5,12 +5,27 @@
     </center>
     <hr>
     <div class="table-responsive">
-        <thead>
-            <tr class="table" >
-                <th>Bank Account Detail</th>
-                <th>Bekash Number</th>
-                <th>Nogod Number</th>
-            </tr>
-        </thead>
+        <table class="table table-bordered table-hover">
+         <thead>
+             <tr>
+                 <th>Bank Account Details</th>
+                 <th>Bekash account</th>
+                 <th>Nogod</th>
+                 <th>Ucash</th>
+                
+             </tr>
+         </thead>
+         <tbody>
+             <tr>
+                 <td>7017016784036</td>
+                 <td>taijulmohim@gmail.com</td>
+                 <td>5555555444</td>
+                 <td>sjsjskskksks</td>
+                 
+                
+
+             </tr>
+         </tbody>
+        </table>
     </div>
 </div>
