@@ -170,26 +170,28 @@ if(isset($_POST['insert'])){
  $product_cat=$_POST['product_cat'];
  $c_cat=$_POST['cat'];
  $product_price=$_POST['product_price'];
- $product_keyword=$_POST['product_keyword'];
  $product_desc=$_POST['product_desc'];
- $poduct_img1=$_FILES['product_img1']['name'];
-  $poduct_img2=$_FILES['product_img2']['name'];
- $poduct_img3=$_FILES['product_img3']['name'];
- $temp_name1=$_FILES['product_img1']['tmp_name'];
- $temp_name2=$_FILES['product_img2']['tmp_name'];
- $temp_name3=$_FILES['product_img3']['tmp_name'];
+ $product_keyword=$_POST['product_keyword'];
 
- move_uploaded_file($temp_name1,"product_images/ $poduct_img1");
- move_uploaded_file($temp_name2,"product_images/ $poduct_img2");
- move_uploaded_file($temp_name3,"product_images/ $poduct_img3");
- $insert="INSERT INTO `product` (`product_id`, `p_cat_id`, `cat_id`, `date`, `product_title`, `product_img1`, `product_img2`, `product_img3`, `product_price`, `product_dec`, `product_key`) 
- VALUES ('','$product_cat',  '$c_cat', NOW(), ' $p_title', '$poduct_img1', '$poduct_img1', '$poduct_img2', '$poduct_img3', '$product_price', '$product_desc','$product_keyword')";
- $sqli=mysqli_query($con,$insert);
- if($sqli==true){
-     echo "done";
- }else{
-     echo "DONE";
- }
+$product_img1=$_FILES['product_img1']['name'];
+$product_img2=$_FILES['product_img2']['name'];
+$product_img3=$_FILES['product_img3']['name'];
+$temp_name1=$_FILES['product_img1']['tmp_name'];
+$temp_name2=$_FILES['product_img2']['tmp_name'];
+$temp_name3=$_FILES['product_img3']['tmp_name'];
+
+move_uploaded_file($temp_name1,"product_images/img/$product_img1");
+move_uploaded_file($temp_name2,"product_images/img/$product_img2");
+move_uploaded_file($temp_name3,"product_images/img/$product_img3");
+$insert_product="INSERT INTO product(p_cat_id,cat_id,date,product_title,product_img1,product_img2,product_img3,product_price,product_dec,product_key)
+VALUES('$product_cat','$c_cat',NOW(),'$product_title','$product_img1','$product_img2','$product_img3','$product_price','$product_desc','$product_keyword')";
+$sqli=mysqli_query($con,$insert_product);
+if(!$sqli==true){
+    die("can not con".mysqli_error($con)) ;
+}else{
+    echo "not done" ;
+}
+
 }
 
 
