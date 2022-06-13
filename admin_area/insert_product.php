@@ -186,10 +186,12 @@ move_uploaded_file($temp_name3,"product_images/img/$product_img3");
 $insert_product="INSERT INTO product(p_cat_id,cat_id,date,product_title,product_img1,product_img2,product_img3,product_price,product_dec,product_key)
 VALUES('$product_cat','$c_cat',NOW(),'$product_title','$product_img1','$product_img2','$product_img3','$product_price','$product_desc','$product_keyword')";
 $sqli=mysqli_query($con,$insert_product);
-if(!$sqli==true){
-    die("can not con".mysqli_error($con)) ;
+if($sqli){
+    echo "<script>alert('Product Inserted Successfully')</script>";
+    echo "<script>window.open('ínsert_product.php')</script>";
+
 }else{
-    echo "not done" ;
+    
 }
 
 }

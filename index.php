@@ -1,6 +1,7 @@
 <?php 
 
 include("include/db.php");
+include("function/function.php");
 
 
 ?>
@@ -270,11 +271,11 @@ include("include/db.php");
     <!-- content -->
     <div id="content" class="container">
         <div class="row">
-            <div class="col-md-4 col-sm-6 center-responsive single">
+            <!-- <div class="col-md-4 col-sm-6 center-responsive single">
                 <div class="product">
 
                     <a href="details.php">
-                        <img src="admin_area/product_images/1.jpg" class="img-responsive" alt="">
+                        <img src="admin_area/product_images/1.jpg" height="" width=" " class="img-responsive" alt="">
                         <div class="text">
                             <h3><a href="details.php">Lorem ipsum dolor sit amet.</a></h3>
                             <p class="price">$15</p>
@@ -287,137 +288,27 @@ include("include/db.php");
                     </a>
                 </div>
 
-            </div>
+            </div> -->
             <!-- end -->
-            <div class="col-md-4 col-sm-6 center-responsive single">
-                <div class="product">
+         
 
-                    <a href="details.php">
-                        <img src="admin_area/product_images/1.jpg" class="img-responsive" alt="">
-                        <div class="text">
-                            <h3><a href="details.php">Lorem ipsum dolor sit amet.</a></h3>
-                            <p class="price">$15</p>
-                            <p class="buttons">
-                                <a href="details.php" class="btn btn-default"> View Details</a>
-                                <a href="details.php" class="btn btn-primary"> <i class="fa fa-shoppinf-cart"></i> Add
-                                    to cart</a>
-                            </p>
-                        </div>
-                    </a>
-                </div>
-
-            </div><!-- end -->
-            <div class="col-md-4 col-sm-6 center-responsive single">
-                <div class="product">
-
-                    <a href="details.php">
-                        <img src="admin_area/product_images/1.jpg" class="img-responsive" alt="">
-                        <div class="text">
-                            <h3><a href="details.php">Lorem ipsum dolor sit amet.</a></h3>
-                            <p class="price">$15</p>
-                            <p class="buttons">
-                                <a href="details.php" class="btn btn-default"> View Details</a>
-                                <a href="details.php" class="btn btn-primary"> <i class="fa fa-shoppinf-cart"></i> Add
-                                    to cart</a>
-                            </p>
-                        </div>
-                    </a>
-                </div>
-
-            </div><!-- end -->
-            <div class="col-md-4 col-sm-6 center-responsive single">
-                <div class="product">
-
-                    <a href="details.php">
-                        <img src="admin_area/product_images/1.jpg" class="img-responsive" alt="">
-                        <div class="text">
-                            <h3><a href="details.php">Lorem ipsum dolor sit amet.</a></h3>
-                            <p class="price">$15</p>
-                            <p class="buttons">
-                                <a href="details.php" class="btn btn-default"> View Details</a>
-                                <a href="details.php" class="btn btn-primary"> <i class="fa fa-shoppinf-cart"></i> Add
-                                    to cart</a>
-                            </p>
-                        </div>
-                    </a>
-                </div>
-
-            </div><!-- end -->
-            <div class="col-md-4 col-sm-6 center-responsive single">
-                <div class="product">
-
-                    <a href="details.php">
-                        <img src="admin_area/product_images/1.jpg" class="img-responsive" alt="">
-                        <div class="text">
-                            <h3><a href="details.php">Lorem ipsum dolor sit amet.</a></h3>
-                            <p class="price">$15</p>
-                            <p class="buttons">
-                                <a href="details.php" class="btn btn-default"> View Details</a>
-                                <a href="details.php" class="btn btn-primary"> <i class="fa fa-shoppinf-cart"></i> Add
-                                    to cart</a>
-                            </p>
-                        </div>
-                    </a>
-                </div>
-
-            </div>
+    
+                       <?php 
+                       
+                       getpro();
+                       
+                       
+                       ?>
+                <!-- end -->
             <!-- end -->
-            <div class="col-md-4 col-sm-6 center-responsive single">
-                <div class="product">
-
-                    <a href="details.php">
-                        <img src="admin_area/product_images/1.jpg" class="img-responsive" alt="">
-                        <div class="text">
-                            <h3><a href="details.php">Lorem ipsum dolor sit amet.</a></h3>
-                            <p class="price">$15</p>
-                            <p class="buttons">
-                                <a href="details.php" class="btn btn-default"> View Details</a>
-                                <a href="details.php" class="btn btn-primary"> <i class="fa fa-shoppinf-cart"></i> Add
-                                    to cart</a>
-                            </p>
-                        </div>
-                    </a>
-                </div>
-
-            </div>
+        <!-- end -->
+           
             <!-- end -->
-            <div class="col-md-4 col-sm-6 center-responsive single">
-                        <div class="product">
-
-                            <a href="details.php">
-                                <img src="admin_area/product_images/1.jpg" class="img-responsive" alt="">
-                                <div class="text">
-                                    <h3><a href="details.php">Lorem ipsum dolor sit amet.</a></h3>
-                                    <p class="price">$15</p>
-                                    <p class="buttons">
-                                        <a href="details.php" class="btn btn-default"> View Details</a>
-                                        <a href="details.php" class="btn btn-primary"> <i
-                                                class="fa fa-shoppinf-cart"></i> Add to cart</a>
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-
-                    </div>
+            
+            <!-- end -->
+           
                     <!-- end -->
-                    <div class="col-md-4 col-sm-6 center-responsive single">
-                        <div class="product">
-
-                            <a href="details.php">
-                                <img src="admin_area/product_images/1.jpg" class="img-responsive" alt="">
-                                <div class="text">
-                                    <h3><a href="details.php">Lorem ipsum dolor sit amet.</a></h3>
-                                    <p class="price">$15</p>
-                                    <p class="buttons">
-                                        <a href="details.php" class="btn btn-default"> View Details</a>
-                                        <a href="details.php" class="btn btn-primary"> <i
-                                                class="fa fa-shoppinf-cart"></i> Add to cart</a>
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-
-                    </div>
+                    
                     <!--  -->
         </div>
 
