@@ -187,13 +187,9 @@ $insert_product="INSERT INTO product(p_cat_id,cat_id,date,product_title,product_
 VALUES('$product_cat','$c_cat',NOW(),'$product_title','$product_img1','$product_img2','$product_img3','$product_price','$product_desc','$product_keyword')";
 $sqli=mysqli_query($con,$insert_product);
 if($sqli){
-    echo "<script>alert('Product Inserted Successfully')</script>";
-    echo "<script>window.open('ínsert_product.php')</script>";
-
-}else{
-    
+  echo "<script>alert('product Insert successfully')</script>"  ;
+  echo "<script>window.open('insert_product.php')</script>";
 }
-
 }
 
 

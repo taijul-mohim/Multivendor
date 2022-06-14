@@ -25,7 +25,7 @@ function getpro(){
                   <center>
                   <p class='button'>
                       <a href='details.php?pro_id=$pro_id' class='btn btn-default'> View Details</a>
-                      <a href='details.php' class='btn btn-primary'> <i class='fa fa-shoppinf-cart'></i> Add
+                      <a href='details.php'?pro_id=$pro_id' class='btn btn-primary'> <i class='fa fa-shoppinf-cart'></i> Add
                           to cart</a>
                   </p>
                   </center>
@@ -61,7 +61,7 @@ function getcat(){
     while($row=mysqli_fetch_array($sqli)){
         $cat_id=$row['cat_id'];
         $cat_title=$row['cat_title'];
-       echo "<li><a href='shop.php?id=$cat_id'>$cat_title</a></li>"; 
+       echo "<li><a href='shop.php?cat_id=$cat_id'>$cat_title</a></li>"; 
     } 
     
     
