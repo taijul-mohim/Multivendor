@@ -71,9 +71,149 @@ function getcat(){
      
   
 }
+// get product categories product
+function getpcatpro(){
+    global $con;
+    if(isset($_GET['p_cat'])){
+      $p_cat_id=$_GET['p_cat'];
+      $get_p_cat="SELECT * FROM product_categories WHERE p_cat_id='$p_cat_id'";
+      $sqli=mysqli_query($con,$get_p_cat);
+      $row_p_cat=mysqli_fetch_array($sqli);
+      $p_cat_title=$row_p_cat['p_cat_title'];
+      $p_cat_desc=$row_p_cat['p_cat_desc'];
+
+      $get_product="SELECT * FROM product WHERE p_cat_id='$p_cat_id'";
+      $run_products=mysqli_query($con,$get_product);
+      $count=mysqli_num_rows($run_products);
+      if($count==0){
+             echo "<div class='box'>
+             
+             <h1>No product Fount In This Product Category</h1>
+             
+             
+             </div>";
+      }else{
+          echo" <div class='box'>
+          <h1> $p_cat_title</h1>
+          <p>$p_cat_desc</p>
+          </div>
+          
+          ";
+      }
+      while($row=mysqli_fetch_array($run_products)){
+          $pro_id=$row['product_id'];
+          $pro_title=$row['product_title'];
+          $product_price=$row['product_price'];
+          $pro_img1=$row['product_img1'];
+          echo "
+          <div class='col-md-4 col-sm-6 center-responsive'>
+          <div class='product'>
+    
+              <a href='details.php?pro_id=$pro_id'>
+                  <img src='admin_area/product_images/$pro_img1'  height='580px' width='425px'  class='img-responsive' alt=''>
+                  <div class='text-center'>
+                      <h3>$pro_title</h3>
+                      
+                      <p class='price'>$product_price tk</p>
+                      <center>
+                      <p class='button'>
+                          <a href='details.php?pro_id=$pro_id' class='btn btn-default'> View Details</a>
+                          <a href='details.php?pro_id=$pro_id' class='btn btn-primary'> <i class='fa fa-shoppinf-cart'></i> Add
+                              to cart</a>
+                      </p>
+                      </center>
+                  </div>
+              </a>
+          </div>
+    
+      </div>
+          ";
+
+      }
+     
+      
+    
+    }
+}
+
+
+// get product categories 
+
+function getCatpro(){
+    global $con;
+    if(isset($_GET['cat_id'])){
+        $cat_id=$_GET['cat_id'];
+        $get_cat="SELECT * FROM categories WHERE cat_id='$cat_id'";
+        $sqli=mysqli_query($con,$get_cat);
+
+       $row_cat=mysqli_fetch_array($sqli);
+       $cat_id=$row_cat['cat_id'];
+       $cat_title=$row_cat['cat_title'];
+       $cat_desc=$row_cat['cat_decs'];
+       $cat_query="SELECT * FROM product WHERE cat_id='$cat_id'";
+       $sqli=mysqli_query($con,$cat_query);
+       $count=mysqli_num_rows($sqli);
+       if($count==0){
+        echo "<div class='box'>
+        
+        <h1>No Category Found</h1>
+        
+        
+        </div>";
+       }else{
+
+        echo" <div class='box'>
+        <h1> $cat_title</h1>
+        <p>$cat_desc</p>
+        </div>
+        
+        ";
+
+        while($row=mysqli_fetch_array($sqli)){
+            $pro_id=$row['product_id'];
+            $pro_title=$row['product_title'];
+            $product_price=$row['product_price'];
+            $pro_img1=$row['product_img1'];
+            echo "
+            <div class='col-md-4 col-sm-6 center-responsive'>
+            <div class='product'>
+      
+                <a href='details.php?pro_id=$pro_id'>
+                    <img src='admin_area/product_images/$pro_img1'  height='580px' width='425px'  class='img-responsive' alt=''>
+                    <div class='text-center'>
+                        <h3>$pro_title</h3>
+                        
+                        <p class='price'>$product_price tk</p>
+                        <center>
+                        <p class='button'>
+                            <a href='details.php?pro_id=$pro_id' class='btn btn-default'> View Details</a>
+                            <a href='details.php?pro_id=$pro_id' class='btn btn-primary'> <i class='fa fa-shoppinf-cart'></i> Add
+                                to cart</a>
+                        </p>
+                        </center>
+                    </div>
+                </a>
+            </div>
+      
+        </div>
+            ";
+  
+        }
+
+
+
+      }
+
+
+
+    }
+}
+
+
+
+
 
 ?>
-
 
 
 

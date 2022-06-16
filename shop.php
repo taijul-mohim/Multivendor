@@ -266,6 +266,16 @@ include("function/function.php");
                             <li><a href="shop.php">Last page</a></li> -->
                         </ul>
                     </center>
+                  
+                        <?php
+                        
+                        getpcatpro();
+                        getCatpro()
+                        
+                        ?>
+
+
+           
                     <!-- end pagination -->
                 </div>
             </div>

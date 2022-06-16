@@ -2,6 +2,25 @@
 
 include("include/db.php");
 include("function/function.php");
+?>
+<?php
+if(isset($_GET['pro_id'])){
+ $pro_id=$_GET['pro_id'];
+  $get_product="SELECT * FROM product WHERE product_id='$pro_id'";
+  $run_pro=mysqli_query($con,$get_product);
+  $row=mysqli_fetch_array($run_pro);
+  $pro_id=$row['product_id'];
+  $p_cat_id=$row['p_cat_id'];
+  $product_title=$row['product_title'];
+  $p_price=$row['product_price'];
+  $p_desc=$row['product_dec'];
+  $p_img1=$row['product_img1'];
+  $p_img2=$row['product_img2'];
+  $p_img3=$row['product_img3'];
+$get_p_cat="SELECT * FROM product_categories WHERE p_cat_id='$p_cat_id'";
+$run_p_cat=mysqli_query($con,$p_cat_id);
+ }
+
 
 
 ?>
@@ -221,7 +240,7 @@ function showDivs(n) {
                     <!-- end cal sm 6 -->
                     <div class="col-sm-6">
                         <div class="box">
-                            <h1 class="text-center">Pizza With hot Souces</h1>
+                            <h1 class="text-center"><?php echo $product_title ;?></h1>
                             <form action="details.php" method="post" class="form-horizontal">
                                 <div class="form-group">
                                     <label class="col-md-5 control-label">Product Quantity</label>
