@@ -10,16 +10,19 @@ if(isset($_GET['pro_id'])){
   $run_pro=mysqli_query($con,$get_product);
   $row=mysqli_fetch_array($run_pro);
   $pro_id=$row['product_id'];
-  $p_cat_id=$row['p_cat_id'];
+  $p_category_id=$row['p_cat_id'];
   $product_title=$row['product_title'];
   $p_price=$row['product_price'];
   $p_desc=$row['product_dec'];
   $p_img1=$row['product_img1'];
   $p_img2=$row['product_img2'];
   $p_img3=$row['product_img3'];
-$get_p_cat="SELECT * FROM product_categories WHERE p_cat_id='$p_cat_id'";
-$run_p_cat=mysqli_query($con,$get_p_cat);
-echo $p_cat_id=$row['p_cat_id'];
+  $get_p_cat="SELECT * FROM product_categories WHERE p_cat_id='$p_category_id' ";
+  $sqli=mysqli_query($con,$get_p_cat);
+  $c_row=mysqli_fetch_array($sqli);
+  $p_cat_id=$c_row['p_cat_id'];
+  $p_title=$c_row['p_cat_title'];
+
 
 
  }
