@@ -18,7 +18,10 @@ if(isset($_GET['pro_id'])){
   $p_img2=$row['product_img2'];
   $p_img3=$row['product_img3'];
 $get_p_cat="SELECT * FROM product_categories WHERE p_cat_id='$p_cat_id'";
-$run_p_cat=mysqli_query($con,$p_cat_id);
+$run_p_cat=mysqli_query($con,$get_p_cat);
+echo $p_cat_id=$row['p_cat_id'];
+
+
  }
 
 
@@ -205,9 +208,9 @@ $run_p_cat=mysqli_query($con,$p_cat_id);
 
                                 
 <div class="w3-content w3-display-container">
-  <img class="mySlides" src="admin_area/product_images/1.jpg" height="500px" style="width:100%">
-  <img class="mySlides" src="admin_area/product_images/burger.jpg"  height="500px"  style="width:100%">
-  <img class="mySlides" src="admin_area/product_images/pizza.jpg"  height="500px"  style="width:100%">
+  <img class="mySlides" src="admin_area/product_images/<?php echo $p_img1?>" height="500px" style="width:100%">
+  <img class="mySlides" src="admin_area/product_images/<?php echo $p_img1?>"  height="500px"  style="width:100%">
+  <img class="mySlides" src="admin_area/product_images/<?php echo  $p_img3?>"  height="500px"  style="width:100%">
   <div  align="center">
   <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
   <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
@@ -276,7 +279,7 @@ function showDivs(n) {
                                     </div>
                                 </div>
                                 <!-- price -->
-                                <p class="price">120tk</p>
+                                <p class="price text-center">price :<?php echo $p_price;?> TK</p>
                                 <p class="text-center buttons">
                                     <button class="btn btn-primary" type="submit">
                                         <i class="fa fa-shopping-cart"></i>Add To cart
@@ -286,17 +289,17 @@ function showDivs(n) {
                         </div>
                         <div class="col-xs-4">
                             <a href="#" class="thumb">
-                                <img src="admin_area/product_images/1.jpg" height="100" alt="">
+                                <img src="admin_area/product_images/<?php echo  $p_img1?>" height="100" alt="">
                             </a>
                         </div>
                         <div class="col-xs-4">
                             <a href="#" class="thumb">
-                                <img src="admin_area/product_images/1.jpg" height="100" alt="">
+                                <img src="admin_area/product_images/<?php echo  $p_img2?>" height="100" alt="">
                             </a>
                         </div>
                         <div class="col-xs-4">
                             <a href="#" class="thumb">
-                                <img src="admin_area/product_images/1.jpg" height="100" alt="">
+                                <img src="admin_area/product_images/<?php echo  $p_img3?>" height="100" alt="">
                             </a>
                         </div>
                     </div>
