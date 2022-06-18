@@ -22,6 +22,7 @@ if(isset($_GET['pro_id'])){
   $c_row=mysqli_fetch_array($sqli);
   $p_cat_id=$c_row['p_cat_id'];
   $p_title=$c_row['p_cat_title'];
+  $p_desc=$c_row['p_cat_desc'];
 
 
 
@@ -157,7 +158,9 @@ if(isset($_GET['pro_id'])){
                 <ul class="breadcrumb">
                     <li><a href="home.php">Home</a></li>
                     <li>Shop</li>
-
+                    <li><a href="shop.php?p_cat=<?php echo $p_cat_id;?>"><?php echo   $p_title ;?></a></li>
+                    
+                    <li><?php echo $product_title;?></li>
                 </ul>
             </div>
             <!--  -->
@@ -247,7 +250,7 @@ function showDivs(n) {
                     <div class="col-sm-6">
                         <div class="box">
                             <h1 class="text-center"><?php echo $product_title ;?></h1>
-                            <form action="details.php" method="post" class="form-horizontal">
+                            <form action="index.php?add_cart=<?php echo $pro_id?>" method="post" class="form-horizontal">
                                 <div class="form-group">
                                     <label class="col-md-5 control-label">Product Quantity</label>
                                     <div class="col-md-7">
