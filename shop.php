@@ -214,10 +214,10 @@ include("function/function.php");
                    
                              <a href='details.php?pro_id=$pro_id'>
                                  <img src='admin_area/product_images/$product_img'  height='580px' width='425px'  class='img-responsive' alt=''>
-                                 <div class='text-center'>
+                                 <div class='text-center box'>
                                      <h3>$product_title</h3>
                                      
-                                     <p class='price'>$product_price tk</p>
+                                     <p class='price'>Price:$product_price tk</p>
                                      <center>
                                      <p class='button'>
                                          <a href='details.php?pro_id=$pro_id' class='btn btn-default'> View Details</a>

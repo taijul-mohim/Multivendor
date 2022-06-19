@@ -9,7 +9,6 @@ if(isset($_GET['pro_id'])){
   $get_product="SELECT * FROM product WHERE product_id='$pro_id'";
   $run_pro=mysqli_query($con,$get_product);
   $row=mysqli_fetch_array($run_pro);
-  $pro_id=$row['product_id'];
   $p_category_id=$row['p_cat_id'];
   $product_title=$row['product_title'];
   $p_price=$row['product_price'];
@@ -62,7 +61,7 @@ if(isset($_GET['pro_id'])){
                 <ul class="menu">
                     <li><a href="customer_register.php">Register</a></li>
                     <li><a href="customer/my_account.php">My Account</a></li>
-                    <li><a href="cart.php">GOto Cart</a></li>
+                    <li><a href="cart.php">Goto Cart</a></li>
                     <li><a href="login.php">Login</li>
 
                 </ul>
@@ -158,9 +157,9 @@ if(isset($_GET['pro_id'])){
                 <ul class="breadcrumb">
                     <li><a href="home.php">Home</a></li>
                     <li>Shop</li>
-                    <li><a href="shop.php?p_cat=<?php echo $p_cat_id;?>"><?php echo   $p_title ;?></a></li>
-                    
-                    <li><?php echo $product_title;?></li>
+                    <li><a href="shop.php?p_cat=<?php echo $p_cat_id?>"></a><?php echo $product_title?></li>
+                   
+                    <li><?php echo $p_title?></li>
                 </ul>
             </div>
             <!--  -->
@@ -215,7 +214,7 @@ if(isset($_GET['pro_id'])){
                                 
 <div class="w3-content w3-display-container">
   <img class="mySlides" src="admin_area/product_images/<?php echo $p_img1?>" height="500px" style="width:100%">
-  <img class="mySlides" src="admin_area/product_images/<?php echo $p_img1?>"  height="500px"  style="width:100%">
+  <img class="mySlides" src="admin_area/product_images/<?php echo $p_img2?>"  height="500px"  style="width:100%">
   <img class="mySlides" src="admin_area/product_images/<?php echo  $p_img3?>"  height="500px"  style="width:100%">
   <div  align="center">
   <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
@@ -247,19 +246,27 @@ function showDivs(n) {
                         </div>
                     </div>
                     <!-- end cal sm 6 -->
+
+
+                    <?php 
+                    
+                    
+                    addCart()
+                    
+                    ?>
                     <div class="col-sm-6">
                         <div class="box">
                             <h1 class="text-center"><?php echo $product_title ;?></h1>
-                            <form action="index.php?add_cart=<?php echo $pro_id?>" method="post" class="form-horizontal">
+                            <form action="details.php?add_cart=<?php echo $pro_id?>" method="post" class="form-horizontal">
                                 <div class="form-group">
                                     <label class="col-md-5 control-label">Product Quantity</label>
                                     <div class="col-md-7">
                                         <select name="product_qty" class="form-control">
-                                            <option value="">1</option>
-                                            <option value="">2</option>
-                                            <option value="">3</option>
-                                            <option value="">4</option>
-                                            <option value="">5</option>
+                                            <option>1</option>
+                                            <option >2</option>
+                                            <option >3</option>
+                                            <option >4</option>
+                                            <option >5</option>
 
 
 
@@ -273,7 +280,7 @@ function showDivs(n) {
                                     <div class="form-group">
                                         <label class="col-md-5 control-label">Product Size</label>
                                         <div class="col-md-7">
-                                            <select name="product_qty" class="form-control">
+                                            <select name="product_size" class="form-control">
                                                 <option value="">Select a size</option>
                                                 <option value="">Small</option>
                                                 <option value="">Medium</option>
@@ -315,20 +322,13 @@ function showDivs(n) {
                 <!-- start -->
                 <div class="box" id="details">
                     <h4>Product Details</h4>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque consequatur, quae consequuntur a
-                        provident labore iusto inventore fuga illo itaque, ducimus magni culpa voluptates eveniet amet
-                        cum, ipsum doloremque. Voluptates debitis eum, iste officia officiis amet dolorum autem velit
-                        eaque fugit animi, ipsa provident exercitationem sapiente distinctio assumenda labore beatae
-                        natus? Corporis aut voluptatibus eius autem ut eligendi ducimus pariatur veniam error nam, illo
-                        enim dolorum necessitatibus. Optio beatae illum mollitia pariatur enim, consequatur minima
-                        deserunt expedita totam nihil provident harum quos quae explicabo est doloremque perferendis,
-                        impedit dolorum. Quasi magnam laboriosam quae, expedita iste possimus cum ea omnis et.</p>
+                    <p><?php echo $p_desc?></p>
                     <h4>Size</h4>
                     <ul>
                         <li> small</li>
                         <li>Medium</li>
                         <li> Large</li>
-                        <li> small</li>
+   
                     </ul>
                 </div>
                 <!-- uggestion bar -->
@@ -341,87 +341,38 @@ function showDivs(n) {
 
                     </div>
                 <!-- food -->
+                  <?php
+                  $get_product="SELECT * FROM product ORDER BY 1 LIMIT 0, 3 ";
+                  $run_product=mysqli_query($con,$get_product);
+                  while($row=mysqli_fetch_array($run_product)){
+                      $pro_id=$row['product_id'];
+                      $product_title=$row['product_title'];
+                      $product_price=$row['product_price'];
+                      $p_img1=$row['product_img1'];
 
-                <div class="col-md-3 col-sm-6 center-responsive">
+
+                      ?>
+
+                    <div class="col-md-3 col-sm-6 center-responsive">  
                         <div class="product">
 
-                            <a href="details.php">
-                                <img src="admin_area/product_images/1.jpg" class="img-responsive" alt="">
-                                <div class="text">
-                                    <h3 class="text-center"><a href="details.php">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat, ut?</a></h3>
-                                    <p class="price text-center ">$15</p>
+                            <a href="details.php?=<?php echo $pro_id;?>">
+                                <img src="admin_area/product_images/<?php echo $p_img1?>" class="img-responsive" alt="">
+                                <div class="text box">
+                                    <h3 class="text-center"><a href="details.php><?php echo $pro_id?>"><?php echo $product_title?></a></h3>
+                                    <p class="price text-center ">Price:<?php echo $product_price?> TK</p>
                                 </div>
                             </a>
                         </div>
 
                     </div>
 
-
-                   <!-- <div class="center-responsive col-md-3">
-                        <div class="product same-height">
-                            <a href="">
-                        <img src="admin_area/product_images/1.jpg" hight='220' width="220" alt="">
-
-                                
-                            </a>
-                            <div class="text">
-                                <h3><a href="details.php">Mardaz food</a></h3>
-                                <p class="price">250tk</p>
-                            </div>
-                        </div>
-                   </div> -->
-                   <!-- <div class="center-responsive col-md-3">
-                        <div class="product same-height">
-                            <a href="">
-                        <img src="admin_area/product_images/1.jpg" width="220" alt="">
-
-                                
-                            </a>
-                            <div class="text">
-                                <h3><a href="details.php">Mardaz food</a></h3>
-                                <p class="price">250tk</p>
-                            </div>
-                        </div>
-                   </div> -->
-                   <!-- <div class="center-responsive col-md-3">
-                        <div class="product same-height">
-                            <a href="">
-                        <img src="admin_area/product_images/1.jpg"width="220" alt="">
-
-                                
-                            </a>
-                            <div class="text">
-                                <h3><a href="details.php">Mardaz food</a></h3>
-                                <p class="price">250tk</p>
-                            </div>
-                        </div>
-                   </div> -->
-                   <div class="col-md-3 col-sm-6 center-responsive">
-                        <div class="product">
-
-                            <a href="details.php">
-                                <img src="admin_area/product_images/1.jpg" class="img-responsive" alt="">
-                                <div class="text">
-                                    <h3 class="text-center"><a href="details.php">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat, ut?</a></h3>
-                                    <p class="price text-center ">$15</p>
-                                </div>
-                            </a>
-                        </div>
-
-                    </div>
-                     <div class="col-md-3 col-sm-6 center-responsive">
-                        <div class="product">
-
-                            <a href="details.php">
-                                <img src="admin_area/product_images/1.jpg" class="img-responsive" alt="">
-                                <div class="text">
-                                    <h3 class="text-center"><a href="details.php">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat, ut?</a></h3>
-                                    <p class="price text-center ">$15</p>
-                                </div>
-                            </a>
-                        </div>
-
-                    </div>
+                 <?php }?>
+                  
+                  
+                  
+                  
+            
               </div>
 
 

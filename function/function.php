@@ -1,6 +1,40 @@
 <?php
 
 $con=mysqli_connect("localhost","root","","ecom");
+// ip adress
+function getUserIP(){
+    switch(true){
+        case (!empty($_SERVER['HTTP_X_REAL_IP'])): return $_SERVER['HTTP_X_REAL_IP'];
+        case (!empty($_SERVER['HTTP_CLIENT_IP'])) : return $_SERVER['HTTP_CLIENT_IP'];
+        case (!empty($_SERVER['HTTP_FORWARDED_FOR'])): return $_SERVER[' HTTP_X_FORWARDED_FOR']; 
+        default : return $_SERVER['REMOTE_ADDR'];
+
+    }
+}
+// add card
+function addCart(){
+    global $con;
+if(isset($_GET['add_cart'])){
+   $ip_add=getUserIP();
+   $p_id=$_GET['add_cart'];
+   $product_qty=$_POST['product_qty'];
+   $product_size=$_POST['product_size'];
+   $check_product="SELECT * FROM cart WHERE ip_add='$ip_add'AND p_id='$p_id'";
+   $run_check=mysqli_query($con,$check_product);
+   if(mysqli_num_rows($run_check)>0){
+       echo "<script>alert('This Product already Added In Cart')</script>";
+       echo "<script>window.open('details.php?pro_id=$p_id,'_self')</script>";
+   }else{
+       $query="INSERT INTO cart(p_id,ip_add,qty,size)VALUES('$p_id','$ip_add','$product_qty','$product_size')";
+       $run_query=mysqli_query($con,$query);
+       echo "<script>window.open('details.php?pro_id=$p_id,'_self')</script>";
+   }
+}
+
+
+}
+
+
 function getpro(){
     global $con;
     $get_product="SELECT * FROM product ORDER BY 1 LIMIT 0,6";
@@ -25,7 +59,7 @@ function getpro(){
                   <center>
                   <p class='button'>
                       <a href='details.php?pro_id=$pro_id' class='btn btn-default'> View Details</a>
-                      <a href='details.php'?pro_id=$pro_id' class='btn btn-primary'> <i class='fa fa-shoppinf-cart'></i> Add
+                      <a href='details.php?pro_id=$pro_id' class='btn btn-primary'> <i class='fa fa-shoppinf-cart'></i> Add
                           to cart</a>
                   </p>
                   </center>
@@ -43,7 +77,7 @@ function getpro(){
 
 function getpcat(){
     global $con;
-$get_p_cat="SELECT * FROM product_categories ";
+$get_p_cat="SELECT * FROM product_categories";
 $sqli=mysqli_query($con,$get_p_cat);
 while($row=mysqli_fetch_array($sqli)){
     $p_cat_id=$row['p_cat_id'];
@@ -208,9 +242,6 @@ function getCatpro(){
 
     }
 }
-
-
-
 
 
 ?>
