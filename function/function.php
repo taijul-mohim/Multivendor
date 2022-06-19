@@ -23,11 +23,11 @@ if(isset($_GET['add_cart'])){
    $run_check=mysqli_query($con,$check_product);
    if(mysqli_num_rows($run_check)>0){
        echo "<script>alert('This Product already Added In Cart')</script>";
-       echo "<script>window.open('details.php?pro_id=$p_id,'_self')</script>";
+       echo "<script>window.open('details.php?pro_id=$p_id','_self')</script>";
    }else{
        $query="INSERT INTO cart(p_id,ip_add,qty,size)VALUES('$p_id','$ip_add','$product_qty','$product_size')";
        $run_query=mysqli_query($con,$query);
-       echo "<script>window.open('details.php?pro_id=$p_id,'_self')</script>";
+       echo "<script>window.open('details.php?pro_id=$p_id','_self')</script>";
    }
 }
 
