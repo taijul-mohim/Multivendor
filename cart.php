@@ -193,7 +193,7 @@ include("function/function.php");
                                         <td><?php echo $pro_title?></td>
                                         <td><?php echo $pro_price?>tk</td>
                                         <td><?php echo $pro_qty?></td>
-                                        <td><input type="checkbox" name="remove[]" valu='<?php echo $pro_id?>'></td>
+                                        <td><input type="checkbox" name="remove[]" value='<?php echo $pro_id?>'></td>
                                         <td><?php echo $sub_total?>tk</td>
                                     </tr>
                                     <?php
@@ -224,6 +224,36 @@ include("function/function.php");
                     </form>
                     
                 </div>
+
+<!-- cart delet -->
+<?php
+function update_cart(){
+    global $con;
+    if(isset($_POST['update'])){
+        foreach($_POST['remove'] as $remove){
+            $delet="DELETE FROM cart Where p_id='$remove'";
+            $run_del=mysqli_query($con,$delet);
+            if($run_del){
+                echo "<script>alert('DELETE Successfully')</script>";
+                echo "<script>window.open('cart.php','_self')</script>";
+ 
+            }else{
+                echo 'not done';
+            }
+        }
+    }
+
+
+
+
+
+}
+echo $dl=update_cart();
+
+?>
+
+
+
                   <!-- uggestion bar -->
                <div id="row same-height-row">
                     <div class="col-md-3 col-sm-6">
