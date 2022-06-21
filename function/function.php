@@ -33,6 +33,8 @@ if(isset($_GET['add_cart'])){
 
 
 }
+// cart item count
+function itme(){}
 
 
 function getpro(){

@@ -55,7 +55,7 @@ if(isset($_GET['pro_id'])){
         <div class="container">
             <div class="col-md-6 offer">
                 <a href="#" class="btn btn-success btn-sm">Wellcome Guest</a>
-                <a href="#">Shopping Cart TOtal price :$120,Items:2</a>
+                <a href="#">Shopping Cart TOtal price :$120,Items:<?php itme()?></a>
             </div>
             <div class="col-md-6">
                 <ul class="menu">
@@ -115,7 +115,7 @@ if(isset($_GET['pro_id'])){
                     <!-- search -->
                     <a href="cart.php" class="btn btn-primary navbar-btn right">
                         <i class="fa fa-shopping-cart "></i>
-                        <span>4 Items In cart</span>
+                        <span><?php itme()?> Items In cart</span>
                     </a>
 
                     <div class="navbar-collapse collapse-right">
@@ -281,11 +281,11 @@ function showDivs(n) {
                                         <label class="col-md-5 control-label">Product Size</label>
                                         <div class="col-md-7">
                                             <select name="product_size" class="form-control">
-                                                <option value="">Select a size</option>
-                                                <option value="">Small</option>
-                                                <option value="">Medium</option>
-                                                <option value="">Large</option>
-                                                <option value="">Extra large</option>
+                                                <option >Select a size</option>
+                                                <option >Small</option>
+                                                <option >Medium</option>
+                                                <option >Large</option>
+                                                <option >Extra large</option>
 
                                             </select>
                                         </div>

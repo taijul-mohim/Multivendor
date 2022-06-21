@@ -29,7 +29,7 @@ include("function/function.php");
         <div class="container">
             <div class="col-md-6 offer">
                 <a href="#" class="btn btn-success btn-sm">Wellcome Guest</a>
-                <a href="#">Shopping Cart TOtal price :$120,Items:2</a>
+                <a href="#">Shopping Cart Total price :$120,Items:<?php itme()?></a>
             </div>
             <div class="col-md-6">
                 <ul class="menu">
@@ -89,7 +89,7 @@ include("function/function.php");
                     <!-- search -->
                     <a href="cart.php" class="btn btn-primary navbar-btn right">
                         <i class="fa fa-shopping-cart "></i>
-                        <span>4 Items In cart</span>
+                        <span><?php itme()?> Items In cart</span>
                     </a>
 
                     <div class="navbar-collapse collapse-right">
