@@ -161,11 +161,11 @@ include("function/function.php");
                         </div>
                         <div class="form-group">
                             <label for="">Email</label>
-                            <input type="email" name="Email" required="" class="form-control">
+                            <input type="email" name="email" required="" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="">Subject</label>
-                            <input type="email" name="submit" required="" class="form-control">
+                            <input type="text" name="subject" required="" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="">Subject</label>
@@ -221,3 +221,32 @@ include("function/function.php");
 </body>
 
 </html>
+<?php
+if(isset($_POST['submit'])){
+    $sender_name=$_POST['name'];
+    $sender_email=$_POST['email'];
+    $subject=$_POST['subject'];
+    $massage=$_POST['massage'];
+    $receiverEmail='taijulmohim@gmailcom';
+    mail($receiverEmail,$sender_name,$subject,$massage,$massage);
+
+// customer mail
+$email=$_POST['email'];
+$sub="Wellcome to our website";
+$msg="I shall get you soon,Thankx for sending mail";
+$form="taijulmohim@gmailcom";
+
+mail($email,$sub,$msg,$form);
+echo "
+<h2 align='center'>Your mail Send</h2>";
+
+
+}
+
+
+
+
+
+
+
+?>
