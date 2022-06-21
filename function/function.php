@@ -41,9 +41,30 @@ $get_item="SELECT * FROM cart WHERE ip_add='$ip_add'";
 $run_item=mysqli_query($con,$get_item);
 $count=mysqli_num_rows($run_item);
 
+echo $count;
 
 }
+// total price count
+function totalPrice(){
+    global $con;
+    $ip_add=getUserIP();
+    $total=0;
+    $select_cart="SELECT * FROM cart WHERE ip_add='$ip_add'";
+    $run=mysqli_query($con,$select_cart);
+    while($row=mysqli_fetch_array($run)){
+        $pro_id=$row['p_id'];
+        $pro_qty=$row['qty'];
+        $get_price="SELECT * FROM product WHERE product_id='$pro_id'";
+        $run_price=mysqli_query($con,$get_price);
+        while($row=mysqli_fetch_array($run_price)){
+            $sub=$row['product_price'] * $pro_qty;
+            $total += $sub;
 
+        }
+
+    }
+    echo $total;
+}
 
 function getpro(){
     global $con;

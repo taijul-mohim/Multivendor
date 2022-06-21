@@ -55,7 +55,7 @@ if(isset($_GET['pro_id'])){
         <div class="container">
             <div class="col-md-6 offer">
                 <a href="#" class="btn btn-success btn-sm">Wellcome Guest</a>
-                <a href="#">Shopping Cart TOtal price :$120,Items:<?php itme()?></a>
+                <a href="#">Shopping Cart Total price :<?php totalPrice()?>TK,Items:<?php itme()?></a>
             </div>
             <div class="col-md-6">
                 <ul class="menu">

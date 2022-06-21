@@ -31,7 +31,7 @@ include("function/function.php");
         <div class="container">
             <div class="col-md-6 offer">
                 <a href="#" class="btn btn-success btn-sm">Wellcome Guest</a>
-                <a href="#">Shopping Cart Total price :$120,Items:2</a>
+                <a href="#">Shopping Cart Total price :<?php totalPrice()?>TK,Items:2</a>
             </div>
             <div class="col-md-6">
                 <ul class="menu">
@@ -139,7 +139,18 @@ include("function/function.php");
                 <div class="box">
                     <form action="cart.php" method="post" enctype="multipart-form-data">
                         <h1>Shopping Cart</h1>
-                        <p class="text-muted"> cruntly you have 3 items in your cart </p>
+                           <?php 
+
+                           $ip_add=getUserIP();
+                            $select_cart="SELECT * FROM cart WHERE ip_add='$ip_add'";
+                            $run_cart=mysqli_query($con,$select_cart);
+                            $count=mysqli_num_rows($run_cart);
+                           
+                           
+                           
+                           ?>
+
+                        <p class="text-muted"> cruntly you have <span class="text-primary"><?php echo $count ?></span>  items in your cart </p>
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
@@ -153,28 +164,46 @@ include("function/function.php");
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php 
+                                    $total=0;
+                                    while($row=mysqli_fetch_array($run_cart)){
+                            $pro_id=$row['p_id'];
+                            $pro_size=$row['size'];
+                            $pro_qty=$row['qty'];
+                            $get_product="SELECT * FROM product WHERE product_id='$pro_id'";
+                            
+                            $run_pro=mysqli_query($con,$get_product);
+                            while($row=mysqli_fetch_array($run_pro)){
+                               $pro_title=$row['product_title'];
+                               $pro_img1=$row['product_img1'];
+                               $pro_price=$row['product_price'];
+                               $sub_total=$row['product_price'] * $pro_qty;
+                               $total +=$sub_total;
+
+
+
+                               
+                                    
+                                    ?>
+
+
                                     <tr>
-                                        <td scope="row"><img src="admin_area/product_images/1.jpg" width="50px" alt="">
+                                        <td scope="row"><img src="admin_area/product_images/<?php echo $pro_img1?>" width="50px" alt="">
                                         </td>
-                                        <td>Hot pizza</td>
-                                        <td>199tk</td>
-                                        <td>Large</td>
-                                        <td><input type="checkbox" name="remove[]"></td>
-                                        <td>199tk</td>
+                                        <td><?php echo $pro_title?></td>
+                                        <td><?php echo $pro_price?>tk</td>
+                                        <td><?php echo $pro_qty?></td>
+                                        <td><input type="checkbox" name="remove[]" valu='<?php echo $pro_id?>'></td>
+                                        <td><?php echo $sub_total?>tk</td>
                                     </tr>
-                                    <tr>
-                                        <td scope="row"><img src="admin_area/product_images/1.jpg" width="50px" alt="">
-                                        </td>
-                                        <td>Hot pizza</td>
-                                        <td>199tk</td>
-                                        <td>Large</td>
-                                        <td><input type="checkbox" name="remove[]"></td>
-                                        <td>199tk</td>
-                                    </tr>
+                                    <?php
+                                    
+                                        }}
+                                    ?>
                                 </tbody>
                                 <tfoot>
                                     <th colspan="5">total</th>
-                                    <th colspan="2">150tk</th>
+                                    <th colspan="2"><?php echo $total?>tk</th>
                                 </tfoot>
                             </table>
                         </div>
