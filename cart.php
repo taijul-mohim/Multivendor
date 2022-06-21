@@ -360,7 +360,7 @@ echo $dl=update_cart();
                         <tbody>
                             <tr>
                                 <td>Order Subtotal</td>
-                                <th>150Tk</th>
+                                <th><?php echo $total?>tk</th>
                             </tr>
                             <tr>
                                 <td>Shipping and handling</td>
