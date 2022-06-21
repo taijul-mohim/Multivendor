@@ -34,7 +34,15 @@ if(isset($_GET['add_cart'])){
 
 }
 // cart item count
-function itme(){}
+function itme(){
+     global $con;
+    $ip_add=getUserIP();
+$get_item="SELECT * FROM cart WHERE ip_add='$ip_add'";
+$run_item=mysqli_query($con,$get_item);
+$count=mysqli_num_rows($run_item);
+
+
+}
 
 
 function getpro(){
