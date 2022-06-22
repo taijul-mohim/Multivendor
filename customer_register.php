@@ -46,7 +46,17 @@ include("function/function.php");
                     <li><a href="customer_register.php">Register</a></li>
                     <li><a href="customer/my_account.php">My Account</a></li>
                     <li><a href="cart.php">Go to Cart</a></li>
-                    <li><a href="login.php">Login</li>
+                    <li>
+                        <?php
+                if(!isset($_SESSION['customer_email'])){
+                    echo "<a href='checkout.php'>Login</a> ";
+                }else{
+                    echo "<a href='logout.php'>logout</a>";
+                }
+
+?>
+
+                    </li>
 
                 </ul>
             </div>
