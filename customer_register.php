@@ -1,13 +1,8 @@
 <?php 
-
+session_start();
 include("include/db.php");
 include("function/function.php");
-
-
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -166,16 +161,16 @@ include("function/function.php");
                             <input type="password" name="c_password" required="" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="">Country</label>
-                            <input type="email" name="c_country" required="" class="form-control">
+                            <label for="">AREA</label>
+                            <input type="text" name="c_area" required="" class="form-control">
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="">City</label>
                             <input type="email" name="c_city" required="" class="form-control">
-                        </div>
+                        </div> -->
                         <div class="form-group">
                             <label for="">Contract Number</label>
-                            <input type="email" name="c_number" required="" class="form-control">
+                            <input type="contact" name="c_contact" required="" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="">Adress</label>
@@ -183,13 +178,11 @@ include("function/function.php");
                         </div>
                         <div class="form-group">
                             <label for="">Adress</label>
-                            <input type="file" name="c_image" required="" class="form-control">
+                            <input type="file" name="c_img" required="" class="form-control">
                         </div>
                         <div class="text-center">
                             <button type="submit" name="submit" class="btn btn-primary"><i class="fa fa-user-md"></i>Register</button>
-                        </div>
-
-
+                        </div> 
                     </form>
                 </div>
             </div>
@@ -215,8 +208,7 @@ include("function/function.php");
 
 
     
-    <?php  include("include/footer.php");  ?>
-
+    <?php  include("include/footer.php"); ?>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
@@ -226,7 +218,6 @@ include("function/function.php");
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous">
     </script>
-
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -234,5 +225,30 @@ include("function/function.php");
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
 -->
 </body>
-
 </html>
+<?php 
+if(isset($_POST['submit'])){
+    $c_name=$_POST['c_name'];
+    $c_email=$_POST['c_email'];
+    $c_pass=$_POST['c_password'];
+    $c_area=$_POST['c_area'];
+    $c_contact=$_POST['c_contact'];
+    $c_address=$_POST['c_adress'];
+    $c_img=$_FILES['c_img']['name'];
+    $temp=$_FILES['c_img']['tmp_name'];
+    $c_ip=getUserIP();
+    move_uploaded_file($temp,"customer/c_images/img/$c_img");
+    
+
+    $customer_q="INSERT INTO customer(customer_id,c_name,c_email,c_pass,c_area,c_contact,c_address,c_img,c_ip)VALUES('','$c_name','$c_email','$c_pass','$c_area','$c_contact','$c_address','$c_img','$c_ip')";
+    $sqli=mysqli_query($con,$customer_q);
+    if($sqli==true){
+        echo "done";
+    }else{
+        echo 'not done';
+    }
+
+
+
+}
+?>
