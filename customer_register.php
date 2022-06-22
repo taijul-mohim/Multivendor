@@ -24,9 +24,23 @@ include("function/function.php");
         <!--top bar  -->
         <div class="container">
             <div class="col-md-6 offer">
-                <a href="#" class="btn btn-success btn-sm">Wellcome Guest</a>
+                <a href="#" class="btn btn-success btn-sm">          
+                 <?php
+                   if(!isset($_SESSION['customer_email'])){
+                    echo "Wellcome Guest";
+                    } else{
+                        echo "Wellcome". "  " . $_SESSION['customer_email'];
+
+                   }
+
+                   
+                   
+                   
+                   ?>
+                   </a>
                 <a href="#">Shopping Cart Total price :<?php totalPrice()?>TK,Items:<?php itme()?></a>
             </div>
+            <span com_load_ty></span>
             <div class="col-md-6">
                 <ul class="menu">
                     <li><a href="customer_register.php">Register</a></li>
@@ -242,10 +256,18 @@ if(isset($_POST['submit'])){
 
     $customer_q="INSERT INTO customer(customer_id,c_name,c_email,c_pass,c_area,c_contact,c_address,c_img,c_ip)VALUES('','$c_name','$c_email','$c_pass','$c_area','$c_contact','$c_address','$c_img','$c_ip')";
     $sqli=mysqli_query($con,$customer_q);
-    if($sqli==true){
-        echo "done";
+    $sel_cart="SELECT * FROM cart WHERE ip_add='$c_ip'";
+    $result=mysqli_query($con,$sel_cart );
+    $check_cart=mysqli_num_rows($result);
+    if($check_cart>0){
+        $_SESSION['customer_email']=$c_email;
+        echo "<script>alert('You have been registered successfully')</script>";
+        echo "<script>window.open('checkout.php','_self')</script>";
     }else{
-        echo 'not done';
+        $_SESSION['customer_email']=$c_email;
+        echo "<script>alert('You have been registered unsuccessfully')</script>";
+        echo "<script>window.open('index.php','_self')</script>";
+
     }
 
 

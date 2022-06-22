@@ -50,8 +50,8 @@ include("function/function.php");
             <div class="container">
                 <div class="navbar-header">
                     <a href="index.php" class="navbar-brand">
-                        <img src="images/logo.png " alt="teehosting" height="40px" class="hidden-xs thumble">
-                        <img src="images/logo.png " alt="teehosting" class="visible-xs">
+                        <img src="c_images/logo.png " alt="teehosting" height="40px" class="hidden-xs thumble">
+                        <img src="c_images/logo.png " alt="teehosting" class="visible-xs">
                     </a>
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
                         <span class="sr-only">Toggle Navigation</span>

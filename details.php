@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 include("include/db.php");
 include("function/function.php");
 ?>
@@ -54,7 +54,20 @@ if(isset($_GET['pro_id'])){
         <!--top bar  -->
         <div class="container">
             <div class="col-md-6 offer">
-                <a href="#" class="btn btn-success btn-sm">Wellcome Guest</a>
+                <a href="#" class="btn btn-success btn-sm">
+                <?php
+                   if(!isset($_SESSION['customer_email'])){
+                    echo "Wellcome Guest";
+                    } else{
+                        echo "Wellcome". "  " . $_SESSION['customer_email'];
+
+                   }
+
+                   
+                   
+                   
+                   ?>
+                </a>
                 <a href="#">Shopping Cart Total price :<?php totalPrice()?>TK,Items:<?php itme()?></a>
             </div>
             <div class="col-md-6">
