@@ -30,13 +30,13 @@ include("function/function.php");
         <div class="container">
             <div class="col-md-6 offer">
                 <a href="#" class="btn btn-success btn-sm">Wellcome Guest</a>
-                <a href="#">Shopping Cart TOtal price :$120,Items:2</a>
+                <a href="#">Shopping Cart Total price :$120,Items:2</a>
             </div>
             <div class="col-md-6">
                 <ul class="menu">
                     <li><a href="../customer_register.php">Register</a></li>
                     <li><a href="../checkout.php">My Account</a></li>
-                    <li><a href="../cart.php">GOto Cart</a></li>
+                    <li><a href="../cart.php">Goto Cart</a></li>
                     <li><a href="../login.php">Login</li>
 
                 </ul>
@@ -77,8 +77,7 @@ include("function/function.php");
                             <li><a href="../shop.php">Shop</a></li>
                             <li class="active"><a href="my_account.php">My Account</a></li>
                             <li><a href="../cart.php">Shopping Cart</a></li>
-                            <li><a href="../about.php">About Us</a></li>
-                            <li><a href="../services.php">Services</a></li>
+                        
                             <li><a href="../contactus.php">Contact us</a></li>
 
 

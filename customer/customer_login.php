@@ -2,8 +2,9 @@
     <div class="box-header">
         <center>
             <h2>Login</h2>
+            <p class="lead"> Already our customer </p>
         </center>
-        <p class="lead"> Already our customer </p>
+       
     </div>
     <form action="" method="post">
         <div class="form-grop">
@@ -12,10 +13,11 @@
 
         </div>
        <div class="form-grop">
-            <label >Email:</label>
+            <label >Password:</label>
             <input type="password" class="form-control" name="c_pass" required=''>
             
         </div>
+        <br>
     <div class="text-center">
         <button name="login" value="login" class="btn btn-primary">
             <i class="fa fa-sign-in"></i> Login
@@ -39,7 +41,7 @@ if(isset($_POST['login'])){
     $sqli=mysqli_query($con,$select_customer);
     $get_ip=getUserIP();
     $chack_customer=mysqli_num_rows($sqli);
-    $select_cart="SELECT * FROM cart WHERE p_id='$get_ip'";
+    $select_cart="SELECT * FROM cart WHERE ip_add='$get_ip'";
     $run_cart=mysqli_query($con,$select_cart);
     $chack_cart=mysqli_num_rows($run_cart);
     if($chack_customer==0){
@@ -52,10 +54,11 @@ if(isset($_POST['login'])){
     {
 $_SESSION['customer_email']=$customer_email;
 echo "<script>alert('You are logged in')</script>";
-echo'<script>Window.open("customer/my_account.php")</script>';
+echo"<script>window.open('customer/my_account.php','_self')</script>";
     }else{
+        $_SESSION['customer_email']=$customer_email;
         echo "<script>alert('You are logged in')</script>";
-echo'<script>Window.open("chackout.php")</script>';
+echo"<script>window.open('checkout.php','_self')</script>";
     }
 }
 

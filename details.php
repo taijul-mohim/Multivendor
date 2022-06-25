@@ -73,7 +73,7 @@ if(isset($_GET['pro_id'])){
             <div class="col-md-6">
                 <ul class="menu">
                     <li><a href="customer_register.php">Register</a></li>
-                    <li><a href="customer/my_account.php">My Account</a></li>
+                    <li><?php if(!isset($_SESSION['customer_email'])){ echo "<a href='checkout.php'>My account</a>";}else{echo '<a href="customer/my_account.php?my_order">My account</a>';}?></li>
                     <li><a href="cart.php">Goto Cart</a></li>
                     <li>
                         <?php
@@ -123,10 +123,9 @@ if(isset($_GET['pro_id'])){
                         <ul class="nav navbar-nav navbar-left">
                             <li><a href="index.php">Home</a></li>
                             <li class="active"><a href="shop.php">Shop</a></li>
-                            <li><a href="customer/my_account.php">My Account</a></li>
+                            <li><?php if(!isset($_SESSION['customer_email'])){ echo "<a href='checkout.php'>My account</a>";}else{echo '<a href="customer/my_account.php?my_order">My account</a>';}?></li>
                             <li><a href="cart.php">Shopping Cart</a></li>
-                            <li><a href="about.php">About Us</a></li>
-                            <li><a href="services.php">Services</a></li>
+                         
                             <li><a href="contactus.php">Contact us</a></li>
 
 
