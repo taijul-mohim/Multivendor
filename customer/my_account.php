@@ -1,4 +1,14 @@
 <?php 
+session_start();
+if(!isset($_SESSION['customer_email'])){
+    echo "<script>window.open('../checkout.php','_self')</script>";
+
+}else{
+
+
+
+
+
 
 include("include/db.php");
 include("function/function.php");
@@ -209,3 +219,4 @@ include("function/function.php");
 </body>
 
 </html>
+<?php }?>

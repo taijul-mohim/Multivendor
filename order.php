@@ -2,13 +2,10 @@
 session_start();
 include("include/db.php");
 include("function/function.php");
-
-
 ?>
-
 <?php
 if(isset($_GET['c_id'])){
-    $customer_id= $_GET['c_id'];
+ $customer_id= $_GET['c_id'];
 }
 $ip_add=getUserIP();
 $status="pending";
@@ -28,7 +25,7 @@ while($row=mysqli_fetch_array($run_cart)){
         //  $insert_pendin_order="INSERT INTO pendin_order(customer_id,invoice_no,product_id,qty,size,order_status)VALUES('$customer_id','$invoice_no','$pro_id','$qty','$size','$status') ";
          $insert_pendin_order="INSERT INTO pending_order(customer_id,invoice_no,product_id,qty,size,order_status) VALUES('$customer_id','$invoice_no','$pro_id','$qty','$size','$status')";
         $run_pending_order=mysqli_query($con,$insert_pendin_order);
-        $delet_cart="DELETE * FROM cart WHERE ip_add='$ip_add' ";
+        $delet_cart="DELETE FROM cart WHERE ip_add='$ip_add'";
         $run_del=mysqli_query($con,$delet_cart);
         echo "<script>alert('your order has been submitted,Thanks')</script>";
         echo "<script>window.open('customer/my_account.php?my_order','_self')</script>";
