@@ -1,3 +1,12 @@
+<?php 
+
+if(!isset($_SESSION['customer_email'])){
+    echo "<script>window.open('../checkout.php','_self')</script>";
+
+}else{
+
+?>
+
 <div class="panel panel-default sidebar-menu">
    <div class="panel-heading">
   <?php
@@ -57,3 +66,4 @@
        </ul>
    </div>
 </div>
+<?php }?>

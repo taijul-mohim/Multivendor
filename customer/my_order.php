@@ -58,7 +58,7 @@
                  <td><?php echo $size ?></td>
                  <td><?php echo $date ?></td>
                  <td><?php echo $order_status?></td>
-                 <td><a href="confirm.php" target="_blank" class="btn btn-primary">Confirm If you Paid</a></td>
+                 <td><a href="confirm.php?order_id=<?php echo $customer_id?>" target="_blank" class="btn btn-primary">Confirm If you Paid</a></td>
 
              </tr>
      <?php  }?>

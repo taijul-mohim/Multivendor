@@ -1,7 +1,19 @@
 <?php 
+session_start();
+if(!isset($_SESSION['customer_email'])){
+    echo "<script>window.open('../checkout.php','_self')</script>";
+
+}else{
 
 include("include/db.php");
 include("function/function.php");
+
+if(isset($_GET['order_id'])){
+    echo $order=$_GET['order_id'];
+}
+
+
+
 
 
 ?>
@@ -51,7 +63,7 @@ include("function/function.php");
             <div class="container">
                 <div class="navbar-header">
                     <a href="index.php" class="navbar-brand">
-                        <img src="images/logo.png " alt="teehosting" height="40px" class="hidden-xs thumble">
+                        <img src="c_images/logo.png " alt="teehosting" height="40px" class="hidden-xs thumble">
                         <img src="images/logo.png " alt="teehosting" class="visible-xs">
                     </a>
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
@@ -148,7 +160,7 @@ include("function/function.php");
             <div class="col-md-9">
                 <div class="box">
                     <h1 align='center'>Plase Confirm Your Order</h1>
-                    <form action="confirm.php" method="post" enctype="multipart/form-data">
+                    <form action="confirm.php?update_id=<?php echo $order?>" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="">Invoice Number</label>
                             <input type="text" name="invoice_number" class="form-control" required=''>
@@ -225,3 +237,4 @@ include("function/function.php");
 </body>
 
 </html>
+<?php }?>
