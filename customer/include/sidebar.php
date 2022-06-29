@@ -1,11 +1,35 @@
 <div class="panel panel-default sidebar-menu">
    <div class="panel-heading">
-       <center>
-           <img src="c_images/customer.png" height="150px" width="150px" alt="">
+  <?php
+  $session_customer=$_SESSION['customer_email'];
+  $get_cust="SELECT * FROM customer WHERE c_email='$session_customer' ";
+  $query=mysqli_query($con,$get_cust);
+  $c_row=mysqli_fetch_array($query);
+   $c_name=$c_row['c_name'];
+    $c_img=$c_row['c_img'];
+  if(!isset($_SESSION['customer_email'])){
 
-       </center>
-       <br>
-       <h3 align='center' class="panel-title">Name:Simanto</h3>
+  }else{
+    echo "<center>
+    <img src='c_images/img/$c_img' height='150px' width='150px'alt=''>
+
+</center>
+<br>
+<h3 align='center' class='panel-title'>Name: $c_name </h3>";
+  }
+  
+  
+  
+  
+  
+  
+  ?>
+
+
+
+
+
+       
    </div>
    <div class="panel-body">
        <ul class="nav nav-pills nav-stacked">
