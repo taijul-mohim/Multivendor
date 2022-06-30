@@ -9,7 +9,7 @@ include("include/db.php");
 include("function/function.php");
 
 if(isset($_GET['order_id'])){
-    echo $order=$_GET['order_id'];
+     $order=$_GET['order_id'];
 }
 
 
@@ -172,9 +172,9 @@ if(isset($_GET['order_id'])){
                         <div class="form-group">
                             <label for="">Payment Method</label>
                             <select name="payment_method" id="" class="form-control">
-                                <option value="">Bank Transfer</option>
-                                <option value=""> Bekash</option>
-                                <option value="">Nogod</option>
+                                <option >Bank Transfer</option>
+                                <option > Bekash</option>
+                                <option >Nogod</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -191,6 +191,47 @@ if(isset($_GET['order_id'])){
                             </button>
                         </div>
                     </form>
+
+<?php
+if(isset($_POST['Confrim_payment'])){
+    $update_id=$_GET['update_id'];
+    $invoice=$_POST['invoice_number'];
+    $amount=$_POST['amount'];
+     $payment_method=$_POST['payment_method'];
+    $trfr=$_POST['Trfr_number'];
+    $date=$_POST['date'];
+    $complete='Complete';
+    $insert="INSERT INTO payment(invoice_id,amount,payment_mode,ref_no,payment_date)VALUES('$invoice','$amount','$payment_method','$trfr','$date')";
+    $run_insert=mysqli_query($con,$insert);
+
+
+
+
+    $order_update= "UPDATE customer_order SET order_status='$complete' WHERE order_id='$update_id'";
+     $run=mysqli_query($con,$order_update);
+
+     $order_p="UPDATE pending_order SET order_status='$complete' WHERE order_id='$update_id'";
+     $run_insert=mysqli_query($con,$order_p);
+
+     echo "<Script>alert('Your Order  has been recived')</Script>";
+     echo "<Script>window.open('my_account.php?order','_self')</Script>";
+}
+
+
+
+
+
+
+
+
+
+?>
+
+
+
+
+
+
                 </div>
             </div>
 
@@ -237,4 +278,4 @@ if(isset($_GET['order_id'])){
 </body>
 
 </html>
-<?php }?>
+<?php }?> 
