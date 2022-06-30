@@ -9,7 +9,7 @@ include("include/db.php");
 include("function/function.php");
 
 if(isset($_GET['order_id'])){
-     $order=$_GET['order_id'];
+   $order=$_GET['order_id'];
 }
 
 
@@ -194,7 +194,7 @@ if(isset($_GET['order_id'])){
 
 <?php
 if(isset($_POST['Confrim_payment'])){
-    $update_id=$_GET['update_id'];
+   $update_id=$_GET['update_id'];
     $invoice=$_POST['invoice_number'];
     $amount=$_POST['amount'];
      $payment_method=$_POST['payment_method'];
@@ -203,16 +203,8 @@ if(isset($_POST['Confrim_payment'])){
     $complete='Complete';
     $insert="INSERT INTO payment(invoice_id,amount,payment_mode,ref_no,payment_date)VALUES('$invoice','$amount','$payment_method','$trfr','$date')";
     $run_insert=mysqli_query($con,$insert);
-
-
-
-
-    $order_update= "UPDATE customer_order SET order_status='$complete' WHERE order_id='$update_id'";
-     $run=mysqli_query($con,$order_update);
-
-     $order_p="UPDATE pending_order SET order_status='$complete' WHERE order_id='$update_id'";
-     $run_insert=mysqli_query($con,$order_p);
-
+    $update_p="UPDATE customer_order SET order_status='$complete' WHERE order_id='$update_id'";
+    $run_p=mysqli_query($con,$update_p);
      echo "<Script>alert('Your Order  has been recived')</Script>";
      echo "<Script>window.open('my_account.php?order','_self')</Script>";
 }

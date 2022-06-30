@@ -34,7 +34,7 @@
       $order_query=mysqli_query($con,$get_order);
       $count=0;
       while($row=mysqli_fetch_array($order_query)){
-       
+       $order_id=$row['order_id'];
        $due_amount=$row['due_amount'];
        $invoice=$row['invoice_no'];
        $qty=$row['qty'];
@@ -58,7 +58,7 @@
                  <td><?php echo $size ?></td>
                  <td><?php echo $date ?></td>
                  <td><?php echo $order_status?></td>
-                 <td><a href="confirm.php?order_id=<?php echo $customer_id?>" target="_blank" class="btn btn-primary">Confirm If you Paid</a></td>
+                 <td><a href="confirm.php?order_id=<?php echo $order_id?>" target="_blank" class="btn btn-primary">Confirm If you Paid</a></td>
 
              </tr>
      <?php  }?>
