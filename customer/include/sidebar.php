@@ -45,9 +45,6 @@ if(!isset($_SESSION['customer_email'])){
        <li class="<?php if(isset($_GET['my_order'])){echo "active";}?>">
            <a href="my_account.php?my_order"> <i class="fa fa-list"></i>  My order</a>
        </li>
-       <li class="<?php if(isset($_GET['my_address'])){echo "active";};?>">
-           <a href="my_account.php?my_address"> <i class="fa fa-user"></i>My Address</a>
-       </li>
        <li class="<?php if(isset($_GET['pay_offline'])){echo "active";};?>">
            <a href="my_account.php?pay_offline"> <i class="fa fa-bolt"></i>Pay Offline</a>
        </li>
