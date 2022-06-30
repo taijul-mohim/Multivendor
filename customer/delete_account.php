@@ -12,3 +12,26 @@
     </form>
     </center>
 </div>
+
+
+
+<?php
+$c_email=$_SESSION['customer_email'];
+if(isset($_POST['yes'])){
+    $delet_q="DELETE FROM customer WHERE c_email='$c_email'";
+    $run=mysqli_query($con,$delet_q);
+    if($run){
+        session_destroy();
+        echo"<script>alert('Your account has been deleted')</script>";
+        echo "<script>window.open('../index.php?my_order','_self')</script>";
+    }
+}
+
+
+
+
+
+
+
+
+?>

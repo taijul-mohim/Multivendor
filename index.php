@@ -6,9 +6,6 @@ include("function/function.php");
 
 ?>
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
