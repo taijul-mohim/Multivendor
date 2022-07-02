@@ -15,6 +15,9 @@
 <body>
     
 
+
+
+
 <div id="wrapper">
     <?php include("includes/sidebar.php") ?>
     <div id="page-wrapper">
@@ -39,6 +42,27 @@ if(isset($_GET['dashboard'])){
 
 
 
+
+
+
+<div  id="copyright">
+  <div class="container">
+      <div class="col-md-6">
+          <p class="pull-left">
+            &copy; 2021 taijul
+          </p>
+      </div>
+      <div class="col-md-6">
+          <p class="pull-right">
+           tamplate
+          </p>
+      </div>
+  </div>
+
+
+
+
+ </div>
 
 
 
