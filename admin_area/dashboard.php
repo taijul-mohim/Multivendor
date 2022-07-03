@@ -40,7 +40,7 @@ if(!isset($_SESSION['admin_email'])){
                         </div>
                         <div class="col-xs-9 text-right">
                                 <div class="huge">
-                                    12
+                                <?php echo $count_pro?>
                                    
                                 </div>
                                 <div>
@@ -76,8 +76,8 @@ if(!isset($_SESSION['admin_email'])){
                         
                         <div class="col-xs-9 text-right">
                                 <div class="huge">
-                                    12
-                                   
+                               
+                                <?php echo  $count_cust?>
                                 </div>
                                 <div>
                                     Customer
@@ -111,7 +111,7 @@ if(!isset($_SESSION['admin_email'])){
                         
                         <div class="col-xs-9 text-right">
                                 <div class="huge">
-                                    12
+                                <?php echo  $count_p?>
                                    
                                 </div>
                                 <div>
@@ -146,7 +146,7 @@ if(!isset($_SESSION['admin_email'])){
                         
                         <div class="col-xs-9 text-right">
                                 <div class="huge">
-                                    12
+                                    <?php echo $count_o?>
                                    
                                 </div>
                                 <div>

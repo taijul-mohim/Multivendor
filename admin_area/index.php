@@ -6,16 +6,37 @@ if(!isset($_SESSION['admin_email'])){
     echo"<script>window.open('login.php','_self')</script>";
 }else{
 
+?>
+<?php 
+$admin_session=$_SESSION['admin_email'];
+$get_admin="SELECT * FROM admin WHERE admin_email='$admin_session'";
+$query=mysqli_query($con,$get_admin);
+$row=mysqli_fetch_array($query);
+$admin_id=$row['admin_id'];
+$admin_name=$row['admin_name'];
+$get_pro="SELECT * FROM product";
 
+$run_pro=mysqli_query($con,$get_pro);
 
+$count_pro=mysqli_num_rows($run_pro);
+$get_cut="SELECT * FROM customer";
+$run_cut=mysqli_query($con,$get_cut);
+$count_cust=mysqli_num_rows($run_cut);
+$get_p="SELECT * FROM product_categories";
+$run_p=mysqli_query($con,$get_p);
+$count_p=mysqli_num_rows($run_p);
 
-
+$get_o="SELECT * FROM customer_order";
+$run_o=mysqli_query($con,$get_o);
+$count_o=mysqli_num_rows($run_o);
 
 
 
 
 
 ?>
+
+
 
 
 
@@ -103,4 +124,4 @@ if(isset($_GET['dashboard'])){
 
 
 
-<?php }?>
+<?php }?> 

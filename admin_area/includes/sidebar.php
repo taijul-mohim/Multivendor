@@ -1,3 +1,16 @@
+<?php
+include("includes/db.php");
+
+if(!isset($_SESSION['admin_email'])){
+    echo"<script>window.open('login.php','_self')</script>";
+}else{
+
+
+?>
+
+
+
+
 <nav class="navbar navbar-inverse " style="background:black ;">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target='.navbar-ex1-collapse'>
@@ -13,28 +26,37 @@
     <ul class="nav navbar-right top-nav">
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" style="margin-right: 10px;" data-toggle="dropdown">
-                <i class="fa fa-user"></i>Taijul islam
+                <i class="fa fa-user"></i><?php echo $admin_name?>
 
             </a>
             <ul class="dropdown-menu">
                 <li>
-                    <a href="index.php?user_profile">
+                    <a href="index.php?user_profile?admin_id=<?php echo $admin_id?>">
                         <i class="fa-solid fa-user"></i>Profile
                     </a>
                 </li>
                 <li>
                     <a href="index.php?view_product">
                         <i class="fa-solid fa-podcast"></i>Product
+                        <span class="badge">
+                            <?php echo $count_pro?>
+                        </span>
                     </a>
                 </li>
                 <li>
                     <a href="index.php?user_customer">
                         <i class="fa-solid fa-users"></i>Customer
+                        <span class="badge">
+                            <?php echo $count_cust?>
+                        </span>
                     </a>
                 </li>
                 <li>
                     <a href="index.php?user_cat">
                         <i class="fa-solid fa-list"></i>Product Categories
+                        <span class="badge">
+                            <?php echo $count_p?>
+                        </span>
                     </a>
                 </li>
                 <li class="divider"></li>
@@ -156,3 +178,4 @@
     </div>
 
 </nav>
+<?php }?>
