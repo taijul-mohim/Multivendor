@@ -385,17 +385,17 @@ echo $dl=update_cart();
                             </tr>
                             <tr>
                                 <td>Shipping and handling</td>
-                                <td>150 tk</td>
+                                <td><?php echo $total?>tk</td>
                             </tr>
                             <tr>
                                 <td>
                                     taxt
                                 </td>
-                                <td>150tk</td>
+                                <td><?php echo $total?>tk</td>
                             </tr>
                             <tr class="total">
                                 <td>Total</td>
-                                <th>150tk</th>
+                                <th><?php echo $total?>tk</th>
                             </tr>
                         </tbody>
 

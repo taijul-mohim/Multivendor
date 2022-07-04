@@ -172,8 +172,110 @@ if(!isset($_SESSION['admin_email'])){
     
 
 
+   
+
+    </div>
+
+
+
+    <div class="row container">
+        <div class="col-lg-8">
+            <div class="panel panel-primary">
+               <div class="panel-heading">
+                <h3 class="panel-title">
+                   <i class="fa fa-money fa-fw"></i>New Order
+                </h3>
+               </div>
+               <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>Order NO:</th>
+                                <th>Customer id:</th>
+                                <th>Invoice No:</th>
+                                <th>Total</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          
+                        <?php 
+                        
+                        $i=0;
+                        $get_order="SELECT * FROM customer_order ORDER BY 1 DESC LIMIT 0,5";
+                        $run_order=mysqli_query($con,$get_order);
+                        while($row=mysqli_fetch_array($run_order)){
+                            
+                            $order_id=$row['order_id'];
+                            $customer_id=$row['customer_id'];
+                            $invoice_on=$row['invoice_no'];
+                            $qty=$row['qty'];
+                            $date=$row['order_date'];
+                            $stutas=$row['order_status'];
+                        ?>
+
+
+                            <tr>
+                                <td><?php echo $i?></td>
+                                <td><?php echo $customer_id?></td>
+                                <td><?php echo $invoice_on?></td>
+                                <td><?php echo $qty?></td>
+                                <td><?php echo $date ?></td>
+                                <td><?php echo $stutas?></td>
+
+                            </tr>
+                            <?php }?>
+                        </tbody>
+                       
+                    </table>
+                </div>
+                <div class="text-right">
+                    <a href="index.php?view_order">
+                        View All Order <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+               </div>
+            </div>
+        </div>
+        <!-- start -->
+      <div class="col-md-4">
+            <div class="panel">
+                <div class="panel-body">
+                    <div class="thumb-info mb-md">
+                        <img src="admin_images/admin.png" class="rounded img-responsive" alt="">
+                        <div class="thumb-info-title">
+                            <span class="thumb-info-inner">Admin Name:</span>
+                            <span class="thumb-info-type"> Admin Job</span>
+                        </div>
+                    </div>
+                    <div class="mb-md">
+                        <div class="widget-content-expanded">
+                            <i class="fa fa-user"></i><span>Email</span>Admin Email <br>
+                            <i class="fa fa-user"></i><span>Contact</span>Admin Contact <br>
+                        </div>
+                        <hr class="dotted short" >
+                        <h5 class="text-muted">About</h5>
+                        <p>Admin About</p>
+                    </div>
+                </div>
+            </div>
+      </div>
 
 
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
 </center>
 <?php }?>
