@@ -18,7 +18,8 @@ if(!isset($_SESSION['admin_email'])){
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-<!-- <div class="row">
+    <center>
+<div class="row">
     <div class="col-lg-12">
         <div class="breadcrumb">
             <li class="active">
@@ -28,7 +29,8 @@ if(!isset($_SESSION['admin_email'])){
 
         </div>
     </div>
-</div>     -->
+</div>    
+</center>
 <!--  -->
 <div class="row" >
    <div class="col-lg-3">

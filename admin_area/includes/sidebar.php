@@ -87,7 +87,7 @@ if(!isset($_SESSION['admin_email'])){
                     <a href="index.php?insert_product">Insert Product</a>
                 </li>
                 <li>
-                    <a href="index.php?insert_product">View Product</a>
+                    <a href="index.php?view_product">View Product</a>
                 </li>
 
             </ul>
