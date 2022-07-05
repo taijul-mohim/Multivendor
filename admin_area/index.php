@@ -14,6 +14,21 @@ $query=mysqli_query($con,$get_admin);
 $row=mysqli_fetch_array($query);
 $admin_id=$row['admin_id'];
 $admin_name=$row['admin_name'];
+$admin_email=$row['admin_email'];
+$admin_job=$row['admin_job'];
+$admin_about=$row['admin_about'];
+$admin_contact=$row['admin_contact'];
+$admin_img=$row['admin_img'];
+
+
+
+
+
+
+
+
+
+
 $get_pro="SELECT * FROM product";
 
 $run_pro=mysqli_query($con,$get_pro);
@@ -69,6 +84,10 @@ $count_o=mysqli_num_rows($run_o);
 if(isset($_GET['dashboard'])){
     include("dashboard.php");
 }
+if(isset($_GET['insert_product'])){
+    include("insert_product.php");
+}
+
 
 
 

@@ -253,20 +253,20 @@ if(!isset($_SESSION['admin_email'])){
             <div class="panel">
                 <div class="panel-body">
                     <div class="thumb-info mb-md">
-                        <img src="admin_images/admin.png" class="rounded img-responsive" alt="">
+                        <img src="admin_images/<?php echo $admin_img?>"  style="border-radius: 15px;" class="rounded img-responsive" alt="">
                         <div class="thumb-info-title">
-                            <span class="thumb-info-inner">Admin Name:</span>
-                            <span class="thumb-info-type"> Admin Job</span>
+                            <span class="thumb-info-inner">Admin Name:<?php echo $admin_name?></span> <br>
+                            <span class="thumb-info-type"> Admin Job: <?php echo $admin_job?></span>
                         </div>
                     </div>
                     <div class="mb-md">
                         <div class="widget-content-expanded">
-                            <i class="fa fa-user"></i><span>Email</span>Admin Email <br>
-                            <i class="fa fa-user"></i><span>Contact</span>Admin Contact <br>
+                            <i class="fa fa-user"></i><span>Email</span><?php echo $admin_email?> <br>
+                            <i class="fa fa-user"></i><span>Contact</span><?php echo $admin_contact?> <br>
                         </div>
                         <hr class="dotted short" >
                         <h5 class="text-muted">About</h5>
-                        <p>Admin About</p>
+                        <p><?php echo $admin_about?></p>
                     </div>
                 </div>
             </div>
