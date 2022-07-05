@@ -192,7 +192,7 @@ if(!isset($_SESSION['admin_email'])){
                         <thead>
                             <tr>
                                 <th>Order NO:</th>
-                                <th>Customer id:</th>
+                                <th>Customer Email:</th>
                                 <th>Invoice No:</th>
                                 <th>Total</th>
                                 <th>Date</th>
@@ -210,16 +210,25 @@ if(!isset($_SESSION['admin_email'])){
                             
                             $order_id=$row['order_id'];
                             $customer_id=$row['customer_id'];
+                            $product_id=$row['product_id'];
                             $invoice_on=$row['invoice_no'];
                             $qty=$row['qty'];
                             $date=$row['order_date'];
                             $stutas=$row['order_status'];
+                            $i++
                         ?>
 
 
                             <tr>
                                 <td><?php echo $i?></td>
-                                <td><?php echo $customer_id?></td>
+                                <td><?php 
+                                $get_cust="SELECT * FROM customer WHERE customer_id='$customer_id'";
+                                $query=mysqli_query($con,$get_cust);
+                                $row=mysqli_fetch_array($query);
+                                echo $customer_email=$row['c_email'];
+                                
+                                ?>
+                            </td>
                                 <td><?php echo $invoice_on?></td>
                                 <td><?php echo $qty?></td>
                                 <td><?php echo $date ?></td>
