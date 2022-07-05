@@ -91,6 +91,9 @@ if(isset($_GET['view_product'])){
     include("view_product.php");
 }
 
+if(isset($_GET['delete_id'])){
+    include("delete_product.php");
+}
 
 
 
