@@ -9,7 +9,13 @@ if(!isset($_SESSION['admin_email'])){
 ?>
 <?php 
 if(isset($_GET['delete_id'])){
-    echo "done" ;
+    $delete_id=$_GET['delete_id'] ;
+    $query="DELETE FROM product WHERE product_id=$delete_id";
+    $sqli=mysqli_query($con,$query);
+    if($sqli){
+          echo "<script>alert('product Delete successfully')</script>" ;
+           echo "<script>window.open('index.php?view_product','_self')</script>";
+    }
 }
 
 

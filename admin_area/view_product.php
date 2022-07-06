@@ -89,7 +89,7 @@ if(!isset($_SESSION['admin_email'])){
                             <td><?php echo $product_key ?></td>
                             <td><?php echo $date?></td>
                             <td><a href="index.php?delete_id=<?php echo  $pro_id; ?>" class="btn btn-danger" > Delete</a></td>
-                            <td><a href="view_product.php?edit_id=<?php echo  $pro_id; ?>" class="btn btn-info" > Edit</a></td>
+                            <td><a href="index.php?edit_id=<?php echo  $pro_id; ?>" class="btn btn-info" > Edit</a></td>
                             <?php }?>
                             </tr>
                             

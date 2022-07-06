@@ -94,6 +94,9 @@ if(isset($_GET['view_product'])){
 if(isset($_GET['delete_id'])){
     include("delete_product.php");
 }
+if(isset($_GET['edit_id'])){
+    include("edit_product.php");
+}
 
 
 
