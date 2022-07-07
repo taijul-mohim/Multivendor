@@ -103,7 +103,7 @@ if(!isset($_SESSION['admin_email'])){
                     <a href="index.php?insert_product_cat">Insert Product Categories</a>
                 </li>
                 <li>
-                    <a href="index.php?insert_product_cat">View Product Categories</a>
+                    <a href="index.php?view_product_cat">View Product Categories</a>
                 </li>
 
             </ul>

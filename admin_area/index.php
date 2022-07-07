@@ -97,7 +97,12 @@ if(isset($_GET['delete_id'])){
 if(isset($_GET['edit_id'])){
     include("edit_product.php");
 }
-
+if(isset($_GET['view_product_cat'])){
+    include("view_product_cat.php");
+}
+if(isset($_GET['insert_product_cat'])){
+    include("insert_product_cat.php");
+}
 
 
 ?>
