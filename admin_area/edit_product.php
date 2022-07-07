@@ -141,26 +141,26 @@ $row=mysqli_fetch_array($sqli);
                  </div>
                  <div class="form-group">
                      <label for=" col-md-3 control-lable">Food Image 1</label>
-                     <input type="file" name="product_img1" class="form-control" required=''>
+                     <input type="file" name="product_img1" class="form-control" >
                      <img src="product_images/<?php echo $p_img1?>" height="50" width="50" alt="">
                  </div>
                  <div class="form-group">
                      <label for=" col-md-3 control-lable">Food Image 2</label>
-                     <input type="file" name="product_img2" class="form-control" required=''>
+                     <input type="file" name="product_img2" class="form-control" >
                      <img src="product_images/<?php echo $p_img2?>" height="50" width="50" alt="">
                  </div>
                  <div class="form-group">
                      <label for=" col-md-3 control-lable">Food Image 3</label>
-                     <input type="file" name="product_img3" class="form-control" required=''>
+                     <input type="file" name="product_img3" class="form-control" >
                      <img src="product_images/<?php echo $p_img1?>" height="50" width="50" alt="">
                  </div>
                  <div class="form-group">
                      <label for=" col-md-3 control-lable">Price</label>
-                     <input type="text" name="product_price" class="form-control" value="<?php echo $p_price?>" required=''>
+                     <input type="text" name="product_price" class="form-control" value="<?php echo $p_price?>" >
                  </div>
                  <div class="form-group">
                      <label for=" col-md-3 control-lable">KeyWord </label>
-                     <input type="text" name="product_keyword" class="form-control" value="<?php echo $p_key?>" required=''>
+                     <input type="text" name="product_keyword" class="form-control" value="<?php echo $p_key?>">
                  </div>
                  <div class="form-group">
                      <label for=" col-md-3 control-lable">Food description </label>
@@ -213,7 +213,27 @@ $temp_name3=$_FILES['product_img3']['tmp_name'];
 move_uploaded_file($temp_name1,"product_images/img/$product_img1");
 move_uploaded_file($temp_name2,"product_images/img/$product_img2");
 move_uploaded_file($temp_name3,"product_images/img/$product_img3");
+if(empty($product_img1|| $product_img2 || $product_img3)){
+    $sql="SELECT * FROM product WHERE product_id='$edit_id'";
+    $select_img=mysqli_query($con,$sql);
+     while($row=mysqli_fetch_array($select_img)){
+        $product_img1=$row['product_img1'];
+        $product_img2=$row['product_img2'];
+        $product_img3=$row['product_img3'];
+     }
 
+     }
+
+
+
+
+
+$update_product="UPDATE product SET p_cat_id='$p_cat',cat_id='$cat',date=NOW(),product_title='$product_title',product_img1='$product_img1',product_img2='$product_img2',product_img3='$product_img3',product_price='$product_price',product_dec='$product_desc',product_key='$product_keyword'WHERE product_id='$edit_id' ";
+$sqli=mysqli_query($con,$update_product);
+if($sqli){
+  echo "<script>alert('product Edit successfully')</script>"  ;
+  echo "<script>window.open('index.php?view_product','_self')</script>";
+}
 }
 
 
