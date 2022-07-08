@@ -103,6 +103,9 @@ if(isset($_GET['view_product_cat'])){
 if(isset($_GET['insert_product_cat'])){
     include("insert_product_cat.php");
 }
+if(isset($_GET['delete_cat'])){
+    include("delete_cat.php");
+}
 
 
 ?>
