@@ -103,13 +103,38 @@ if(isset($_GET['view_product_cat'])){
 if(isset($_GET['insert_product_cat'])){
     include("insert_product_cat.php");
 }
-if(isset($_GET['delete_cat'])){
-    include("delete_cat.php");
+if(isset($_GET['delete_p_cat'])){
+    include("delete_p_cat.php");
 }
+if(isset($_GET['edit_p_cat'])){
+    include("edit_p_cat.php");
+}
+
+if(isset($_GET['insert_cat'])){
+    include("insert_cat.php");
+}
+// categories
+
+if(isset($_GET['view_cat'])){
+    include("view_cat.php");
+}
+
 if(isset($_GET['edit_cat'])){
     include("edit_cat.php");
 }
 
+
+
+if(isset($_GET['delete_cat'])){
+    include("delete_cat.php");
+}
+// insert slider 
+
+
+
+if(isset($_GET['insert_slider'])){
+    include("insert_slider.php");
+}
 
 
 ?>

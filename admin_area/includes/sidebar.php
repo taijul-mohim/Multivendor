@@ -132,10 +132,10 @@ if(!isset($_SESSION['admin_email'])){
             
             <ul class="collapse" id="slider">
                 <li>
-                    <a href="index.php?insert_product">Insert Slider</a>
+                    <a href="index.php?insert_slider">Insert Slider</a>
                 </li>
                 <li>
-                    <a href="index.php?insert_product">View slider</a>
+                    <a href="index.php?view_slider">View slider</a>
                 </li>
 
             </ul>
