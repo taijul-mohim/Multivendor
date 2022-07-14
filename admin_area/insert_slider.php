@@ -44,7 +44,7 @@ if(!isset($_SESSION['admin_email'])){
                     <label >Slider Name</label>
                 </div>
                 <div class="col-md-6">
-                <input type="text" name="slider_name" class="form-control" required=' '>
+                <input type="text" name="slider_name" class="form-control" required=' ' placeholder="Slider name"> 
                 </div>
             </div>
             <br>
@@ -60,8 +60,7 @@ if(!isset($_SESSION['admin_email'])){
             </div>
              <br>
              <br>
-             <br>
-             <br>
+            
             <div class="form-group">
                 <div class="col-md-6">
                   
@@ -82,14 +81,10 @@ if(!isset($_SESSION['admin_email'])){
     <?php 
     
     if(isset($_POST['submit'])){
-        $p_c_title=$_POST['p_cat_title'] ;
-        $p_c_desc=$_POST['p_cat_desc'];
-        $query="UPDATE product_categories SET p_cat_title='$p_c_title' ,p_cat_desc='$p_c_desc' WHERE p_cat_id='$edit_id'";
-        $sqli=mysqli_query($con,$query);
-        if($sqli){
-            echo "<script>alert('product Category Update  successfully')</script>"  ;
-            echo "<script>window.open('index.php?view_product_cat','_self')</script>";
-          }
+        $slide_name=$_POST['slider_name'];
+        $slide_imghe=$_FILES['slide_img']['name'];
+        $tmp_name=$_FILES['slide_img']['tmp_name'];
+        $view=" ";
     }
     
     
