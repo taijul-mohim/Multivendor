@@ -117,10 +117,10 @@ if(!isset($_SESSION['admin_email'])){
             
             <ul class="collapse" id="categories">
                 <li>
-                    <a href="index.php?insert_product">Insert Categories</a>
+                    <a href="index.php?insert_cat">Insert Categories</a>
                 </li>
                 <li>
-                    <a href="index.php?insert_product">View Categories</a>
+                    <a href="index.php?view_cat">View Categories</a>
                 </li>
 
             </ul>

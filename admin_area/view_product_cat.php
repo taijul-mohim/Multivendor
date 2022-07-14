@@ -73,8 +73,8 @@ if(!isset($_SESSION['admin_email'])){
                        
                           
                            
-                            <td><a href="index.php?delete_cat=<?php echo  $pro_cat_id; ?>" class="btn btn-danger" > Delete</a></td>
-                            <td><a href="index.php?edit_cat=<?php echo  $pro_cat_id; ?>" class="btn btn-info" > Edit</a></td>
+                            <td><a href="index.php?delete_p_cat=<?php echo  $pro_cat_id; ?>" class="btn btn-danger" > Delete</a></td>
+                            <td><a href="index.php?edit_p_cat=<?php echo  $pro_cat_id; ?>" class="btn btn-info" > Edit</a></td>
                             <?php }?>
                             </tr>
                             
