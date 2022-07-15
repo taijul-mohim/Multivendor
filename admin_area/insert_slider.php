@@ -54,7 +54,7 @@ if(!isset($_SESSION['admin_email'])){
                     <label >Slider Image</label>
                 </div>
                 <div class="col-md-6">
-                  <input type="file" name="slide_img" class="form-control" >
+                <input type="file" name="slide_img" class="form-control" required=''>
                     </div>
                   
             </div>
@@ -82,9 +82,24 @@ if(!isset($_SESSION['admin_email'])){
     
     if(isset($_POST['submit'])){
         $slide_name=$_POST['slider_name'];
-        $slide_imghe=$_FILES['slide_img']['name'];
+        $slide_img=$_FILES['slide_img']['name'];
         $tmp_name=$_FILES['slide_img']['tmp_name'];
-        $view=" ";
+        $view=" SELECT * FROM slider";
+        $view_run=mysqli_query($con,$view);
+        $count=mysqli_num_rows($view_run);
+        if($count<4){
+
+            move_uploaded_file($tmp_name,"slider_images/$slide_img");
+            $insert_slider="INSERT INTO  slider(slider_name,Slider_img)VALUES('$slide_name','$slide_img'); ";
+            $run=mysqli_query($con,$insert_slider);
+            echo "<script>alert('Insert Slider   successfully')</script>"  ;
+            echo "<script>window.open('index.php?view_slider','_self')</script>";
+        
+        
+        }   else{
+            echo "<script>alert('You Have already  4 slider')</script>"  ;
+
+        }
     }
     
     

@@ -136,6 +136,9 @@ if(isset($_GET['insert_slider'])){
     include("insert_slider.php");
 }
 
+if(isset($_GET['view_customer'])){
+    include('view_customer.php');
+}
 
 ?>
         </div>
