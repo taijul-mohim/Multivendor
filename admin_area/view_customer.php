@@ -57,6 +57,11 @@ if(!isset($_SESSION['admin_email'])){
                             $c_id=$row['customer_id'];
                            $c_name=$row['c_name'];
                            $c_email=$row['c_email'];
+                           $c_area=$row['c_area'];
+                           $c_adress=$row['c_address'];
+                           $c_area=$row['c_contact'];
+                           $c_img=$row['c_img'];
+                           $c_contact=$row['c_contact'];
                            
                             
                            
@@ -72,12 +77,18 @@ if(!isset($_SESSION['admin_email'])){
                             <td><?php echo $i?></td>
                             <td><?php echo $c_name?></td>
                              
-                            <td><?php echo $p_cat_desc?></td>
+                            <td><?php echo $c_email?></td>
+                            <td><img src="../customer/c_images/<?php echo $c_img?>" height="50" width="50" alt=""></td>
+                            <td><?php echo $c_area?></td>
+                            <td><?php echo $c_adress?></td>
+                            <td><?php echo $c_contact?></td>
+
+
                        
                           
                            
-                            <td><a href="index.php?delete_p_cat=<?php echo  $pro_cat_id; ?>" class="btn btn-danger" > Delete</a></td>
-                            <td><a href="index.php?edit_p_cat=<?php echo  $pro_cat_id; ?>" class="btn btn-info" > Edit</a></td>
+                            <td><a href="index.php?delete_c=<?php echo  $c_id; ?>" class="btn btn-danger" > Delete</a></td>
+                      
                             <?php }?>
                             </tr>
                             

@@ -140,6 +140,13 @@ if(isset($_GET['view_customer'])){
     include('view_customer.php');
 }
 
+
+if(isset($_GET['delete_c'])){
+    include('delete_c.php');
+}
+
+
+
 ?>
         </div>
 
