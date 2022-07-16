@@ -201,7 +201,7 @@ if(isset($_POST['Confrim_payment'])){
     $trfr=$_POST['Trfr_number'];
     $date=$_POST['date'];
     $complete='Complete';
-    $insert="INSERT INTO payment(invoice_id,amount,payment_mode,ref_no,payment_date)VALUES('$invoice','$amount','$payment_method','$trfr','$date')";
+    $insert="INSERT INTO payment(invoice_id,amount,payment_mode,ref_no,date)VALUES('$invoice','$amount','$payment_method','$trfr','$date')";
     $run_insert=mysqli_query($con,$insert);
     $update_p="UPDATE customer_order SET order_status='$complete' WHERE order_id='$update_id'";
     $run_p=mysqli_query($con,$update_p);

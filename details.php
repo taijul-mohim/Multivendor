@@ -16,12 +16,12 @@ if(isset($_GET['pro_id'])){
   $p_img1=$row['product_img1'];
   $p_img2=$row['product_img2'];
   $p_img3=$row['product_img3'];
-  $get_p_cat="SELECT * FROM product_categories WHERE p_cat_id='$p_category_id' ";
-  $sqli=mysqli_query($con,$get_p_cat);
-  $c_row=mysqli_fetch_array($sqli);
-  $p_cat_id=$c_row['p_cat_id'];
-  $p_title=$c_row['p_cat_title'];
-  $p_desc=$c_row['p_cat_desc'];
+//   $get_p_cat="SELECT * FROM product_categories WHERE p_cat_id='$p_category_id' ";
+//   $sqli=mysqli_query($con,$get_p_cat);
+//   $c_row=mysqli_fetch_array($sqli);
+//   $p_cat_id=$c_row['p_cat_id'];
+//   $p_title=$c_row['p_cat_title'];
+//   $p_desc=$c_row['p_cat_desc'];
 
 
 
@@ -181,7 +181,7 @@ if(isset($_GET['pro_id'])){
                     <li>Shop</li>
                     <li><a href="shop.php?p_cat=<?php echo $p_cat_id?>"></a><?php echo $product_title?></li>
                    
-                    <li><?php echo $p_title?></li>
+                
                 </ul>
             </div>
             <!--  -->

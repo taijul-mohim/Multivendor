@@ -155,6 +155,18 @@ if(isset($_GET['delete_order'])){
     include('delete_order.php');
 }
 
+// payment
+if(isset($_GET['view_Payments'])){
+    include('view_Payments.php');
+}
+
+if(isset($_GET['payment'])){
+    include('d_Payments.php');
+}
+// user 
+if(isset($_GET['insert_Users'])){
+    include('insert_user.php');
+}
 
 
 
