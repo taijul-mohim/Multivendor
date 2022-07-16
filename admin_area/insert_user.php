@@ -53,7 +53,7 @@ if(!isset($_SESSION['admin_email'])){
                     </div>
                 </div>
             </form> -->
-                    <form action=" " method="post">
+                    <form action=" " method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <div class="col-md-6">
                                 <label>user Name</label>
@@ -102,7 +102,7 @@ if(!isset($_SESSION['admin_email'])){
                                 <label>User About</label>
                             </div>
                             <div class="col-md-6">
-                                <textarea name="admin_about" class="form-control" id="" cols="30" rows="10"
+                                <textarea name="about" class="form-control" id="" cols="30" rows="10"
                                     required=''></textarea>
                             </div>
 
@@ -146,23 +146,16 @@ if(!isset($_SESSION['admin_email'])){
        $admin_email=$_POST['admin_email'];
        $admin_pass=$_POST['admin_pass'];
        $admin_contact=$_POST['admin_contact'];
-       $admin_about=$_POST['admin_about'];
+       $admin_about=$_POST['about'];
        $admin_job=$_POST['admin_job'];
        $admin_img=$_FILES['admin_img']['name'];
        $tmp=$_FILES['admin_img']['tmp_name'];
        move_uploaded_file($tmp,"admin_images/$admin_img");
-
-
-
-
-
-
-
-    //  $sqli="   INSERT INTO `admin` (`admin_id`, `admin_name`, `admin_email`, `admin_pass`, `admin_img`, `admin_contact`, `admin_job`, `admin_about`) VALUES (NULL, '$admin_name', '$admin_email', '$admin_pass', '$admin_img', '$admin_contact', '$admin_job', '$admin_about')";
-    //  $query=mysqli_query($con,$sqli);
-    //  if($sqli){
-    //     echo "done" ;
-    //  }
+     $sqli="   INSERT INTO `admin` (`admin_id`, `admin_name`, `admin_email`, `admin_pass`, `admin_img`, `admin_contact`, `admin_job`, `admin_about`) VALUES (NULL, '$admin_name', '$admin_email', '$admin_pass', '$admin_img', '$admin_contact', '$admin_job', '$admin_about')";
+     $query=mysqli_query($con,$sqli);
+     if($sqli){
+        echo "done" ;
+     }
     }
     
     
