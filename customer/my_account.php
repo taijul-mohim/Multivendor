@@ -7,9 +7,6 @@ if(!isset($_SESSION['customer_email'])){
 
 
 
-
-
-
 include("include/db.php");
 include("function/function.php");
 
@@ -39,15 +36,25 @@ include("function/function.php");
         <!--top bar  -->
         <div class="container">
             <div class="col-md-6 offer">
-                <a href="#" class="btn btn-success btn-sm">Wellcome Guest</a>
-                <a href="#">Shopping Cart Total price :$120,Items:2</a>
+                <a href="#" class="btn btn-success btn-sm"><?php echo $_SESSION['customer_email']?></a>
+                <a href="#">Shopping Cart Total price :<?php totalPrice()?>TK,Items:<?php itme() ?></a>
             </div>
             <div class="col-md-6">
                 <ul class="menu">
                     <li><a href="../customer_register.php">Register</a></li>
                     <li><a href="../checkout.php">My Account</a></li>
                     <li><a href="../cart.php">Goto Cart</a></li>
-                    <li><a href="../login.php">Login</li>
+                    <li><a href="../login.php">
+                        <?php
+                if(!isset($_SESSION['customer_email'])){
+                    echo "<a href='checkout.php'>Login</a> ";
+                }else{
+                    echo "<a href='logout.php'>logout</a>";
+                }
+
+?>
+
+                    </li>
 
                 </ul>
             </div>
@@ -99,7 +106,7 @@ include("function/function.php");
                     <!-- search -->
                     <a href="cart.php" class="btn btn-primary navbar-btn right">
                         <i class="fa fa-shopping-cart "></i>
-                        <span>4 Items In cart</span>
+                        <span><?php itme()?> Items In cart</span>
                     </a>
 
                     <div class="navbar-collapse collapse-right">

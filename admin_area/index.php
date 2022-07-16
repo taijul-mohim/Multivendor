@@ -146,6 +146,17 @@ if(isset($_GET['delete_c'])){
 }
 
 
+// order
+
+if(isset($_GET['view_order'])){
+    include('view_order.php');
+}
+if(isset($_GET['delete_order'])){
+    include('delete_order.php');
+}
+
+
+
 
 ?>
         </div>
