@@ -6,9 +6,20 @@ if(!isset($_SESSION['admin_email'])){
     echo"<script>window.open('login.php','_self')</script>";
 }else{
 
-
-
-
+    if(isset($_GET['edit_profile'])){
+        $edit_id=$_GET['edit_profile'];
+       $query="SELECT * FROM admin WHERE admin_id='$edit_id'";
+       $sqli=mysqli_query($con,$query);
+       $row=mysqli_fetch_array($sqli);
+       $admin_name=$row['admin_name']; 
+       $admin_email=$row['admin_email'];
+       $admin_pass=$row['admin_pass'];
+       $admin_job=$row['admin_job'];
+       $admin_contact=$row['admin_contact'];
+       $admin_about=$row['admin_about'];
+       $admin_img=$row['admin_img'];
+    }
+    
 
     
 
@@ -19,7 +30,7 @@ if(!isset($_SESSION['admin_email'])){
             <div class="breadcrumb">
                 <li class="active">
                     <i class="fa fa-dashboard"></i>
-                    Dashboard/Insert Categories
+                    Dashboard/Insert Admin
                 </li>
 
             </div>
@@ -32,7 +43,7 @@ if(!isset($_SESSION['admin_email'])){
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">
-                        <i class="fa fa-money fa-fw"></i>Insert Categories
+                        <i class="fa fa-money fa-fw"></i>Insert Admin
                     </h3>
                 </div>
                 <!-- end -->
@@ -65,7 +76,7 @@ if(!isset($_SESSION['admin_email'])){
                                 <label>user Name</label>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" name="admin_name" class="form-control" required=''>
+                                <input type="text" name="admin_name" class="form-control" required='' value="<?php echo $admin_name?>">
                             </div>
                             <br>
                             <br>
@@ -73,7 +84,7 @@ if(!isset($_SESSION['admin_email'])){
                                 <label>Email</label>
                             </div>
                             <div class="col-md-6">
-                                <input type="email" name="admin_email" class="form-control" required=''>
+                                <input type="email" name="admin_email" class="form-control" required='' value="<?php echo $admin_email?>">
                             </div>
                             <br>
                             <br>
@@ -81,7 +92,7 @@ if(!isset($_SESSION['admin_email'])){
                                 <label>user Password</label>
                             </div>
                             <div class="col-md-6">
-                                <input type="pass" name="admin_pass" class="form-control" required=''>
+                                <input type="pass" name="admin_pass" class="form-control" required='' value="<?php echo  $admin_pass?>" >
                             </div>
                             <br>
                             <br>
@@ -89,7 +100,7 @@ if(!isset($_SESSION['admin_email'])){
                                 <label>user Job</label>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" name="admin_job" class="form-control" required=''>
+                                <input type="text" name="admin_job" class="form-control" required=''  value="<?php echo  $admin_job?>">
                             </div>
                             <br>
                             <br>
@@ -97,9 +108,9 @@ if(!isset($_SESSION['admin_email'])){
                                 <label>user Contact</label>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" name="admin_contact" class="form-control" required=''>
+                                <input type="text" name="admin_contact" class="form-control" required='' value="<?php echo $admin_contact?>">
                             </div>
-                            <br>
+                            
                             <br>
                         </div>
 
@@ -109,7 +120,7 @@ if(!isset($_SESSION['admin_email'])){
                             </div>
                             <div class="col-md-6">
                                 <textarea name="about" class="form-control" id="" cols="30" rows="10"
-                                    required=''></textarea>
+                                    required=''><?php echo $admin_about ?></textarea>
                             </div>
 
                         </div>
@@ -123,10 +134,11 @@ if(!isset($_SESSION['admin_email'])){
                             </div>
                             <div class="col-md-6">
                                 <input type="file" name="admin_img" class="form-control" required=''>
+                                <img src="admin_images/<?php echo $admin_img?>"  height="80" width="60"  alt="">
                             </div>
 
          
-         
+          
                         <div class="form-group">
                             <div class="col-md-6">
 
@@ -157,7 +169,18 @@ if(!isset($_SESSION['admin_email'])){
        $admin_img=$_FILES['admin_img']['name'];
        $tmp=$_FILES['admin_img']['tmp_name'];
        move_uploaded_file($tmp,"admin_images/$admin_img");
-     $sqli="   INSERT INTO `admin` (`admin_id`, `admin_name`, `admin_email`, `admin_pass`, `admin_img`, `admin_contact`, `admin_job`, `admin_about`) VALUES (NULL, '$admin_name', '$admin_email', '$admin_pass', '$admin_img', '$admin_contact', '$admin_job', '$admin_about')";
+
+       if(empty($admin_img)){
+        $sql="SELECT * FROM admin WHERE admin_id='$edit_id'";
+        $select_img=mysqli_query($con,$sql);
+         while($row=mysqli_fetch_array($select_img)){
+             $admin_img=$row['admin_img'];
+    
+         }
+        }
+    
+
+     $sqli="UPDATE `admin";
      $query=mysqli_query($con,$sqli);
      if($sqli){
         echo "<script>alert('Add User successfully')</script>"  ;

@@ -173,6 +173,9 @@ if(isset($_GET['insert_Users'])){
 if(isset($_GET['view_user'])){
     include('view_user.php');
 }
+if(isset($_GET['edit_profile'])){
+    include('e_admin.php');
+}
 
 ?>
         </div>
