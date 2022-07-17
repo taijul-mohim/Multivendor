@@ -168,7 +168,11 @@ if(isset($_GET['insert_Users'])){
     include('insert_user.php');
 }
 
+// user
 
+if(isset($_GET['view_user'])){
+    include('view_user.php');
+}
 
 ?>
         </div>

@@ -154,8 +154,9 @@ if(!isset($_SESSION['admin_email'])){
      $sqli="   INSERT INTO `admin` (`admin_id`, `admin_name`, `admin_email`, `admin_pass`, `admin_img`, `admin_contact`, `admin_job`, `admin_about`) VALUES (NULL, '$admin_name', '$admin_email', '$admin_pass', '$admin_img', '$admin_contact', '$admin_job', '$admin_about')";
      $query=mysqli_query($con,$sqli);
      if($sqli){
-        echo "done" ;
-     }
+        echo "<script>alert('Add User successfully')</script>"  ;
+        echo "<script>window.open('index.php?view_user','_self')</script>";
+      }
     }
     
     

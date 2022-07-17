@@ -38,7 +38,7 @@ if(!isset($_SESSION['admin_email'])){
         <!-- end -->
           <div class="panel-body">
         
-            <form action=" " method="post">
+            <form action=" " method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <div class="col-md-6">
                     <label >Slider Name</label>
@@ -90,7 +90,7 @@ if(!isset($_SESSION['admin_email'])){
         if($count<4){
 
             move_uploaded_file($tmp_name,"slider_images/$slide_img");
-            $insert_slider="INSERT INTO  slider(slider_name,Slider_img)VALUES('$slide_name','$slide_img'); ";
+            $insert_slider="INSERT INTO  slider(slider_name,slider_image)VALUES('$slide_name','$slide_img'); ";
             $run=mysqli_query($con,$insert_slider);
             echo "<script>alert('Insert Slider   successfully')</script>"  ;
             echo "<script>window.open('index.php?view_slider','_self')</script>";

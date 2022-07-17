@@ -77,11 +77,11 @@ if(isset($_POST['update'])){
     $c_area=$_POST['c_area'];
     $c_nmbr=$_POST['c_nmbr'];
     $c_adress=$_POST['c_address'];
-    // $c_img=$_FILES['c_img']['name'];
-    // $temp=$_FILES['c_img']['tmp_name'];
-    // $img=$_FILES['img'];
-    // $c_img_tmp=$_FILES['c_img']['tmp_name'];
-    // move_uploaded_file($c_img_tmp,"c_images/img/$c_img");
+    $c_img=$_FILES['c_img']['name'];
+    $temp=$_FILES['c_img']['tmp_name'];
+    $img=$_FILES['img'];
+    $c_img_tmp=$_FILES['c_img']['tmp_name'];
+    move_uploaded_file($c_img_tmp,"c_images/img/$c_img");
     $update="UPDATE customer SET c_name='$c_name',c_email='$c_email',c_area='$c_area',c_contact='$c_nmbr',c_address='$c_adress' WHERE  customer_id='$update_id'";
     $run_customer=mysqli_query($con,$update);
     
