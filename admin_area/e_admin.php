@@ -11,6 +11,7 @@ if(!isset($_SESSION['admin_email'])){
        $query="SELECT * FROM admin WHERE admin_id='$edit_id'";
        $sqli=mysqli_query($con,$query);
        $row=mysqli_fetch_array($sqli);
+       $admin_id=$row['admin_id'];
        $admin_name=$row['admin_name']; 
        $admin_email=$row['admin_email'];
        $admin_pass=$row['admin_pass'];
@@ -180,10 +181,10 @@ if(!isset($_SESSION['admin_email'])){
         }
     
 
-     $sqli="UPDATE `admin";
+     $sqli="UPDATE admin SET admin_name='$admin_name',admin_email='$admin_email',admin_pass='$admin_pass',admin_img='$admin_img',admin_contact='$admin_contact',admin_about='$admin_about',admin_job='$admin_job'  WHERE admin_id='$edit_id' ";
      $query=mysqli_query($con,$sqli);
      if($sqli){
-        echo "<script>alert('Add User successfully')</script>"  ;
+        echo "<script>alert('Update User successfully')</script>"  ;
         echo "<script>window.open('index.php?view_user','_self')</script>";
       }
     }
