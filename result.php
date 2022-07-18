@@ -2,8 +2,6 @@
 session_start();
 include("include/db.php");
 include("function/function.php");
-
-
 ?>
 
 <!DOCTYPE html>
@@ -138,15 +136,15 @@ include("function/function.php");
                         </button>
                     </div>
                     <div class="collapse clearfix" id="search">
-                        
-                        <form class="navbar-form" method="get" action="result.php">
+
+                        <form class="navbar-form" method="post" action="result.php">
                             <div class="input-group">
                                 <input type="text" name="search" placeholder="search" class="form-control"
                                     required="">
                                 <span class="input-group-btn">
 
 
-                                    <button type="submit" value="Search"  class="btn btn-primary">
+                                    <button type="submit" value="Search" name="search" class="btn btn-primary">
                                         <i class="fa fa-search "></i>
                                     </button>
                                 </span>
@@ -161,149 +159,8 @@ include("function/function.php");
 
 
 
+ 
 
-    <!-- slider -->
-    <div class="container" id="slider">
-        <div class="col-md-12">
-            <!-- <div class="carousel slider" id="myCarousel" data-ride="">
-               <ol class="carousel-indicaters">
-                   <li data-target="myCarousel" data-slide-to='0' class="active"></li>
-                   <li data-target="myCarousel" data-slide-to='1' ></li>
-                   <li data-target="myCarousel" data-slide-to='2' ></li>
-                   <li data-target="myCarousel" data-slide-to='3' ></li>
-
-               </ol>
-               <div class="carousel-inner img">
-                   <div class="item-active">
-                       <img src="cover/1_nKSANcE0nTsmnFY3w4O1dQ.png" alt="">
-                   </div>
-                   <div class="item">
-                       <img src="" alt="">
-                   </div>
-                   <div class="item">
-                       <img src="" alt="">
-                   </div>
-                   <div class="item">
-                       <img src="" alt="">
-                   </div>
-               </div>
-               <a href="#myCarousel" class="left carousel-control" data-slide="prev">
-                   <span class="glyphicon glyphicon-chevron-left"></span>
-                   <span class="sr-only">Previous</span>
-               </a>
-               <a href="#myCarousel" class="left carousel-control" data-slide="next">
-                   <span class="glyphicon glyphicon-chevron-right"></span>
-                   <span class="sr-only">Next</span>
-               </a>
-            </div> -->
-
-            <div class="w3-content w3-display-container">
-                <?php
-            $get_slider="SELECT * FROM slider";
-            $run_slider=mysqli_query($con,$get_slider);
-            while($row=mysqli_fetch_array($run_slider)){
-                $id=$row["id"];
-                $slider_name=$row['slider_name'];
-                $slider_image=$row['slider_image'];
-
-
-
-         
-
-?>
-
-
-                <img class="mySlides" src="admin_area/slider_images/<?php echo $slider_image?>" height="500px"
-                    style="width:100%">
-
-                <?php }?>
-
-
-                <div  align="center">
-                    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-                    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
-                </div>
-            </div>
-
-            <script>
-                var slideIndex = 1;
-                showDivs(slideIndex);
-
-                function plusDivs(n) {
-                    showDivs(slideIndex += n);
-                }
-
-                function showDivs(n) {
-                    var i;
-                    var x = document.getElementsByClassName("mySlides");
-                    if (n > x.length) {
-                        slideIndex = 1
-                    }
-                    if (n < 1) {
-                        slideIndex = x.length
-                    }
-                    for (i = 0; i < x.length; i++) {
-                        x[i].style.display = "none";
-                    }
-                    x[slideIndex - 1].style.display = "block";
-                }
-            </script>
-
-
-
-        </div>
-
-    </div>
-    <!--advantange  -->
-    <div id="advantage">
-        <div class="container">
-            <div class="same-height-row">
-                <div class="col-sm-4">
-                    <div class="box same-height">
-                        <div class="icon">
-                           
-                            <h3><a href="">Best PRICE</a></h3>
-                            <p>You can check on all others sits about the pricces and than compire with o</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="box same-height">
-                        <div class="icon">
-                          
-                            <h3><a href="">1005 SATISFACTION GUARANTEED FROM US</a></h3>
-                            <p>Free returns on everythings for 3 months</p>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <div class="box same-height">
-                        <div class="icon">
-        
-                            <h3><a href="">WE LOVE OUR CUSTOMER</a></h3>
-                            <p>We are known to best possible services</p>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <!-- hot box -->
-    <div id="hot">
-        <div class="box">
-            <div class="container">
-                <div class="col-md-12">
-                    <h2>Letest This week</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- content -->
     <div id="content" class="container">
         <div class="row">
             <!-- <div class="col-md-4 col-sm-6 center-responsive single">
@@ -326,14 +183,65 @@ include("function/function.php");
             </div> -->
             <!-- end -->
          
+          
+            <h2 class="text-center">Foods on Your Search <a href="#" class="text-white"></a></h2>
+        
+            <?php     
+               $search=$_GET['search'];
+                // $search=preg_replace("#[^0-9a-z]#i","",$search);
+                $sqli="SELECT * FROM product WHERE product_title LIKE '%$search%'";
+               $query=mysqli_query($con,$sqli);
+               $count=mysqli_num_rows($query);
+               if($count>0){  
+                $massage="Product Find";             
+                while($row=mysqli_fetch_assoc($query)){
+                    $pro_id= $row['product_id'];
+                    $product_title=$row['product_title'];
+                    $product_price=$row['product_price'];
+                    $product_img=$row['product_img1'];
+                    echo "
+                    <div class='col-md-4 col-sm-6 center-responsive single'>
+                    <div class='product'>
+              
+                        <a href='details.php?pro_id=$pro_id'>
+                            <img src='admin_area/product_images/$product_img'  height='580px' width='425px'  class='img-responsive' alt=''>
+                            <div class='text'>
+                                <h3>$product_title</h3>
+                                
+                                <p class='price'>$product_price tk</p>
+                                <center>
+                                <p class='button'>
+                                    <a href='details.php?pro_id=$pro_id' class='btn btn-default'> View Details</a>
+                                    <a href='details.php?pro_id=$pro_id' class='btn btn-primary'> <i class='fa fa-shoppinf-cart'></i> Add
+                                        to cart</a>
+                                </p>
+                                </center>
+                            </div>
+                        </a>
+                    </div>
+              
+                </div>
+                    ";
+              
+                   
+                  }
+                }else{
 
-    
-                       <?php 
-                       
-                       getpro();
-                       
-                       
-                       ?>
+
+                    echo "<script>alert(' Itmes cant Find')</script>"  ;
+                    echo "<script>window.open('index.php','_self')</script>";
+
+
+            
+            
+                }   
+            
+            ?>
+ 
+
+
+
+
                 <!-- end -->
             <!-- end -->
         <!-- end -->
@@ -349,25 +257,18 @@ include("function/function.php");
 
     </div>
 
-
-
     <?php  include("include/footer.php");  ?>
 
 
-
-
-
-
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
-    </script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+</script>
 
 </body>
 

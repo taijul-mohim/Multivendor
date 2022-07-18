@@ -168,9 +168,7 @@ if(!isset($_SESSION['admin_email'])){
                 <li>
                     <a href="index.php?view_user">View Users</a>
                 </li>
-                <li>
-                    <a href="index.php?edit_profile">Edit Profile</a>
-                </li>
+               
 
             </ul>
             </li>
