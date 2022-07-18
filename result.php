@@ -137,14 +137,14 @@ include("function/function.php");
                     </div>
                     <div class="collapse clearfix" id="search">
 
-                        <form class="navbar-form" method="post" action="result.php">
-                            <div class="input-group">
+                        <form class="navbar-form" method="get" action="result.php">
+                        <div class="input-group">
                                 <input type="text" name="search" placeholder="search" class="form-control"
                                     required="">
                                 <span class="input-group-btn">
 
 
-                                    <button type="submit" value="Search" name="search" class="btn btn-primary">
+                                    <button type="submit" value="Search"  class="btn btn-primary">
                                         <i class="fa fa-search "></i>
                                     </button>
                                 </span>
