@@ -375,16 +375,17 @@ function showDivs(n) {
 
                       ?>
 
-                    <div class="col-md-3 col-sm-6 center-responsive">  
-                        <div class="product">
+                    <div class="col-md-3 col-sm-6 center-responsive ">  
+                        <div class="product ">
 
-                            <a href="details.php?=<?php echo $pro_id;?>">
-                                <img src="admin_area/product_images/<?php echo $p_img1?>" class="img-responsive" alt="">
-                                <div class="text box">
-                                    <h3 class="text-center"><a href="details.php><?php echo $pro_id?>"><?php echo $product_title?></a></h3>
-                                    <p class="price text-center ">Price:<?php echo $product_price?> TK</p>
-                                </div>
-                            </a>
+                        <a href='details.php?pro_id=<?php echo $pro_id?>'>
+              <img src='admin_area/product_images/<?php echo $p_img1?>'  height='580px' width='425px'  class='img-responsive' alt=''>
+              <div class='text box'>
+                  <h3><?php echo $product_title?></h3>
+                  
+                  <p class='price'><?php echo $product_price?> tk</p>
+              </div>
+          </a>
                         </div>
 
                     </div>
