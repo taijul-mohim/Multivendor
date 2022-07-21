@@ -380,7 +380,7 @@ function showDivs(n) {
 
                         <a href='details.php?pro_id=<?php echo $pro_id?>'>
               <img src='admin_area/product_images/<?php echo $p_img1?>'  height='580px' width='425px'  class='img-responsive' alt=''>
-              <div class='text box'>
+              <div class='text box text-center'>
                   <h3><?php echo $product_title?></h3>
                   
                   <p class='price'><?php echo $product_price?> tk</p>
