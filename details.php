@@ -55,7 +55,7 @@ if(isset($_GET['pro_id'])){
         <div class="container">
             <div class="col-md-6 offer">
                 <a href="#" class="btn btn-success btn-sm">
-                <?php
+                    <?php
                    if(!isset($_SESSION['customer_email'])){
                     echo "Wellcome Guest";
                     } else{
@@ -73,7 +73,8 @@ if(isset($_GET['pro_id'])){
             <div class="col-md-6">
                 <ul class="menu">
                     <li><a href="customer_register.php">Register</a></li>
-                    <li><?php if(!isset($_SESSION['customer_email'])){ echo "<a href='checkout.php'>My account</a>";}else{echo '<a href="customer/my_account.php?my_order">My account</a>';}?></li>
+                    <li><?php if(!isset($_SESSION['customer_email'])){ echo "<a href='checkout.php'>My account</a>";}else{echo '<a href="customer/my_account.php?my_order">My account</a>';}?>
+                    </li>
                     <li><a href="cart.php">Goto Cart</a></li>
                     <li>
                         <?php
@@ -123,9 +124,10 @@ if(isset($_GET['pro_id'])){
                         <ul class="nav navbar-nav navbar-left">
                             <li><a href="index.php">Home</a></li>
                             <li class="active"><a href="shop.php">Shop</a></li>
-                            <li><?php if(!isset($_SESSION['customer_email'])){ echo "<a href='checkout.php'>My account</a>";}else{echo '<a href="customer/my_account.php?my_order">My account</a>';}?></li>
+                            <li><?php if(!isset($_SESSION['customer_email'])){ echo "<a href='checkout.php'>My account</a>";}else{echo '<a href="customer/my_account.php?my_order">My account</a>';}?>
+                            </li>
                             <li><a href="cart.php">Shopping Cart</a></li>
-                         
+
                             <li><a href="contactus.php">Contact us</a></li>
 
 
@@ -151,13 +153,12 @@ if(isset($_GET['pro_id'])){
                     <div class="collapse clearfix" id="search">
 
                         <form class="navbar-form" method="get" action="result.php">
-                        <div class="input-group">
-                                <input type="text" name="search" placeholder="search" class="form-control"
-                                    required="">
+                            <div class="input-group">
+                                <input type="text" name="search" placeholder="search" class="form-control" required="">
                                 <span class="input-group-btn">
 
 
-                                    <button type="submit" value="Search"  class="btn btn-primary">
+                                    <button type="submit" value="Search" class="btn btn-primary">
                                         <i class="fa fa-search "></i>
                                     </button>
                                 </span>
@@ -180,8 +181,8 @@ if(isset($_GET['pro_id'])){
                     <li><a href="home.php">Home</a></li>
                     <li>Shop</li>
                     <li><a href="shop.php?p_cat=<?php echo $p_cat_id?>"></a><?php echo $product_title?></li>
-                   
-                
+
+
                 </ul>
             </div>
             <!--  -->
@@ -233,36 +234,45 @@ if(isset($_GET['pro_id'])){
                             </a> -->
 
 
-                                
-<div class="w3-content w3-display-container">
-  <img class="mySlides" src="admin_area/product_images/<?php echo $p_img1?>" height="500px" style="width:100%">
-  <img class="mySlides" src="admin_area/product_images/<?php echo $p_img2?>"  height="500px"  style="width:100%">
-  <img class="mySlides" src="admin_area/product_images/<?php echo  $p_img3?>"  height="500px"  style="width:100%">
-  <div  align="center">
-  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
-  </div>
-</div>
 
-<script>
-var slideIndex = 1;
-showDivs(slideIndex);
+                            <div class="w3-content w3-display-container">
+                                <img class="mySlides" src="admin_area/product_images/<?php echo $p_img1?>"
+                                    height="500px" style="width:100%">
+                                <img class="mySlides" src="admin_area/product_images/<?php echo $p_img2?>"
+                                    height="500px" style="width:100%">
+                                <img class="mySlides" src="admin_area/product_images/<?php echo  $p_img3?>"
+                                    height="500px" style="width:100%">
+                                <div align="center">
+                                    <button class="w3-button w3-black w3-display-left"
+                                        onclick="plusDivs(-1)">&#10094;</button>
+                                    <button class="w3-button w3-black w3-display-right"
+                                        onclick="plusDivs(1)">&#10095;</button>
+                                </div>
+                            </div>
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
+                            <script>
+                                var slideIndex = 1;
+                                showDivs(slideIndex);
 
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  x[slideIndex-1].style.display = "block";  
-}
-</script>
+                                function plusDivs(n) {
+                                    showDivs(slideIndex += n);
+                                }
+
+                                function showDivs(n) {
+                                    var i;
+                                    var x = document.getElementsByClassName("mySlides");
+                                    if (n > x.length) {
+                                        slideIndex = 1
+                                    }
+                                    if (n < 1) {
+                                        slideIndex = x.length
+                                    }
+                                    for (i = 0; i < x.length; i++) {
+                                        x[i].style.display = "none";
+                                    }
+                                    x[slideIndex - 1].style.display = "block";
+                                }
+                            </script>
 
 
                         </div>
@@ -279,16 +289,17 @@ function showDivs(n) {
                     <div class="col-sm-6">
                         <div class="box">
                             <h1 class="text-center"><?php echo $product_title ;?></h1>
-                            <form action="details.php?add_cart=<?php echo $pro_id?>" method="post" class="form-horizontal">
+                            <form action="details.php?add_cart=<?php echo $pro_id?>" method="post"
+                                class="form-horizontal">
                                 <div class="form-group">
                                     <label class="col-md-5 control-label">Product Quantity</label>
                                     <div class="col-md-7">
                                         <select name="product_qty" class="form-control">
                                             <option>1</option>
-                                            <option >2</option>
-                                            <option >3</option>
-                                            <option >4</option>
-                                            <option >5</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
 
 
 
@@ -303,11 +314,11 @@ function showDivs(n) {
                                         <label class="col-md-5 control-label">Product Size</label>
                                         <div class="col-md-7">
                                             <select name="product_size" class="form-control">
-                                                <option >Select a size</option>
-                                                <option >Small</option>
-                                                <option >Medium</option>
-                                                <option >Large</option>
-                                                <option >Extra large</option>
+                                                <option>Select a size</option>
+                                                <option>Small</option>
+                                                <option>Medium</option>
+                                                <option>Large</option>
+                                                <option>Extra large</option>
 
                                             </select>
                                         </div>
@@ -350,11 +361,11 @@ function showDivs(n) {
                         <li> small</li>
                         <li>Medium</li>
                         <li> Large</li>
-   
+
                     </ul>
                 </div>
                 <!-- uggestion bar -->
-               <div id="row same-height-row">
+                <div id="row same-height-row">
                     <div class="col-md-3 col-sm-6">
                         <div class="box same-height headline ">
                             <h3 class="text-center"> You also like those Food</h3>
@@ -362,8 +373,8 @@ function showDivs(n) {
                         </div>
 
                     </div>
-                <!-- food -->
-                  <?php
+                    <!-- food -->
+                    <?php
                   $get_product="SELECT * FROM product ORDER BY 1 LIMIT 0, 3 ";
                   $run_product=mysqli_query($con,$get_product);
                   while($row=mysqli_fetch_array($run_product)){
@@ -375,28 +386,29 @@ function showDivs(n) {
 
                       ?>
 
-                    <div class="col-md-3 col-sm-6 center-responsive ">  
+                    <div class="col-md-3 col-sm-6 center-responsive ">
                         <div class="product ">
 
-                        <a href='details.php?pro_id=<?php echo $pro_id?>'>
-              <img src='admin_area/product_images/<?php echo $p_img1?>'  height='580px' width='425px'  class='img-responsive' alt=''>
-              <div class='text box text-center'>
-                  <h3><?php echo $product_title?></h3>
-                  
-                  <p class='price'><?php echo $product_price?> tk</p>
-              </div>
-          </a>
+                            <a href='details.php?pro_id=<?php echo $pro_id?>'>
+                                <img src='admin_area/product_images/<?php echo $p_img1?>' height='580px' width='425px'
+                                    class='img-responsive' alt=''>
+                                <div class='text box text-center'>
+                                    <h3><?php echo $product_title?></h3>
+
+                                    <p class='price'><?php echo $product_price?> tk</p>
+                                </div>
+                            </a>
                         </div>
 
                     </div>
 
-                 <?php }?>
-                  
-                  
-                  
-                  
-            
-              </div>
+                    <?php }?>
+
+
+
+
+
+                </div>
 
 
 
