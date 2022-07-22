@@ -57,8 +57,8 @@ if(!isset($_SESSION['customer_email'])){
        <li class="<?php if(isset($_GET['delete_account'])){echo "active";};?>">
            <a href="my_account.php?delete_account"> <i class="fa fa-trace-o"></i>Delete Account</a>
        </li>
-       <li class="<?php if(isset($_GET[''])){echo "active";};?>">
-           <a href="my_account.php?pay_offline"> <i class="fa fa-sign-out"></i>Loge Out</a>
+       <li class="<?php if(isset($_GET['logout'])){echo "active";};?>">
+           <a href="my_account.php?logout"> <i class="fa fa-sign-out"></i>Loge Out</a>
        </li>
        </ul>
    </div>

@@ -286,86 +286,39 @@ echo $dl=update_cart();
                     </div>
                 <!-- food -->
 
-                <div class="col-md-3 col-sm-6 center-responsive">
-                        <div class="product">
+                <?php
+                  $get_product="SELECT * FROM product ORDER BY 1 LIMIT 0, 3 ";
+                  $run_product=mysqli_query($con,$get_product);
+                  while($row=mysqli_fetch_array($run_product)){
+                      $pro_id=$row['product_id'];
+                      $product_title=$row['product_title'];
+                      $product_price=$row['product_price'];
+                      $p_img1=$row['product_img1'];
 
-                            <a href="details.php">
-                                <img src="admin_area/product_images/1.jpg" class="img-responsive" alt="">
-                                <div class="text">
-                                    <h3 class="text-center"><a href="details.php">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat, ut?</a></h3>
-                                    <p class="price text-center ">$15</p>
+
+                      ?>
+
+                    <div class="col-md-3 col-sm-6 center-responsive ">
+                        <div class="product ">
+
+                            <a href='details.php?pro_id=<?php echo $pro_id?>'>
+                                <img src='admin_area/product_images/<?php echo $p_img1?>' height='580px' width='425px'
+                                    class='img-responsive' alt=''>
+                                <div class='text box text-center'>
+                                    <h3><?php echo $product_title?></h3>
+
+                                    <p class='price'><?php echo $product_price?> tk</p>
                                 </div>
                             </a>
                         </div>
 
                     </div>
 
+                    <?php }?>                
 
-                   <!-- <div class="center-responsive col-md-3">
-                        <div class="product same-height">
-                            <a href="">
-                        <img src="admin_area/product_images/1.jpg" hight='220' width="220" alt="">
 
-                                
-                            </a>
-                            <div class="text">
-                                <h3><a href="details.php">Mardaz food</a></h3>
-                                <p class="price">250tk</p>
-                            </div>
-                        </div>
-                   </div> -->
-                   <!-- <div class="center-responsive col-md-3">
-                        <div class="product same-height">
-                            <a href="">
-                        <img src="admin_area/product_images/1.jpg" width="220" alt="">
-
-                                
-                            </a>
-                            <div class="text">
-                                <h3><a href="details.php">Mardaz food</a></h3>
-                                <p class="price">250tk</p>
-                            </div>
-                        </div>
-                   </div> -->
-                   <!-- <div class="center-responsive col-md-3">
-                        <div class="product same-height">
-                            <a href="">
-                        <img src="admin_area/product_images/1.jpg"width="220" alt="">
-
-                                
-                            </a>
-                            <div class="text">
-                                <h3><a href="details.php">Mardaz food</a></h3>
-                                <p class="price">250tk</p>
-                            </div>
-                        </div>
-                   </div> -->
-                   <div class="col-md-3 col-sm-6 center-responsive">
-                        <div class="product">
-
-                            <a href="details.php">
-                                <img src="admin_area/product_images/1.jpg" class="img-responsive" alt="">
-                                <div class="text">
-                                    <h3 class="text-center"><a href="details.php">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat, ut?</a></h3>
-                                    <p class="price text-center ">$15</p>
-                                </div>
-                            </a>
-                        </div>
-
-                    </div>
-                     <div class="col-md-3 col-sm-6 center-responsive">
-                        <div class="product">
-
-                            <a href="details.php">
-                                <img src="admin_area/product_images/1.jpg" class="img-responsive" alt="">
-                                <div class="text">
-                                    <h3 class="text-center"><a href="details.php">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat, ut?</a></h3>
-                                    <p class="price text-center ">$15</p>
-                                </div>
-                            </a>
-                        </div>
-
-                    </div>
+                  
+                    
               </div>
 
             </div>

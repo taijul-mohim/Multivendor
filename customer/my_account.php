@@ -181,6 +181,9 @@ include("function/function.php");
                 <?php if(isset($_GET['delete_account'])){
                    include("delete_account.php");
                }?>
+                <?php if(isset($_GET['logout'])){
+                   include("logout.php");
+               }?>
              </div>
 
 
