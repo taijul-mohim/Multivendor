@@ -28,7 +28,7 @@ if(!isset($_SESSION['admin_email'])){
                  
                     <h3 class="panel-title">
 
-                    <i class="fa-solid fa-money-bill"></i>View User
+                    <i class="fa-solid fa-money-bill"></i>View Admin
 
                     </h3>
                 </div>
