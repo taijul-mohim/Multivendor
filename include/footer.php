@@ -45,7 +45,7 @@
                   <strong>
                       friend.com</strong>
                       <br>Sohawal
-                      <br>ksdkkskskks
+                      <br>Contact
                       <br>+01674555554
                   <a href="contact.php">Goto contact us page</a>
               </p>
@@ -55,7 +55,7 @@
               <div class="col-md-3 col-sm-6">
          <h4>Get the news</h4>
          <p class="text-muted">
-            new
+            
          </p>
          <form action="">
              <div class="input-group-btn">
