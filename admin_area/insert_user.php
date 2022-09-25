@@ -32,7 +32,7 @@ if(!isset($_SESSION['admin_email'])){
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">
-                        <i class="fa fa-money fa-fw"></i>Insert Categories
+                        <i class="fa fa-money fa-fw"></i>Add User
                     </h3>
                 </div>
                 <!-- end -->

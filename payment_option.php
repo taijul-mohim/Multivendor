@@ -24,7 +24,7 @@ $c_id=$row_customer['customer_id'];
     </p>
   <center>
     <p class="lead">
-        <a href="">Bekash
+        <a href="">Bkash
             <img src="images/bkash.png" alt="" width="500" height="270" class="img-responsive">
         </a>
         
